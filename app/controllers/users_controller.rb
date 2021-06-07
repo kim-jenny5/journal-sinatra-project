@@ -15,20 +15,19 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             # This should redirect to user's home/'index' page with URL as user's username
             # redirect to "/#{@user.username}"
-            redirect to "/user/home"
+            redirect to "/#{@user.name}/home"
         else
+            # flash message here
             redirect to "/signup"
         end
     end
 
     get '/login' do
-        # @user = User.find_by_username(params[:username])
         erb :'/user/login'
     end
 
     post '/login' do
         @user = User.find_by_username(params[:username])
-        binding.pry
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
             redirect to "/user/home"
