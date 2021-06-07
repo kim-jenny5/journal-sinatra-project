@@ -1,6 +1,21 @@
 <h1>New Entry</h1>
 <form action="/<%= current_user.username %>/entries" method="POST">
-<label>Title: </label>
+<label for="titel">Title: </label>
 <input type="text" id="title" name="title">
-<input type="submit" value="Save">
+<p><input type="text" id="the_entry" name="the_entry"></p>
+<label for="mood">How do you feel today?</label>
+<select id="mood" name="mood">
+    <option id="happy" name="happy">Happy</option>
+    <option id="meh" name="meh">Meh</option>
+    <option id="sad" name="sad">Sad</option>
+    <option>Angry</option>
+    <option>Tired</option>
+    <option>Stressed</option>
+    <option>Sick</option>
+</select>
+<p><label for="food">What did you eat today?</label>
+<input type="text" id="food" name="food"></p>
+<p><label for="gratitude">What are you grateful for today?</label>
+<input type="text" id="gratitude" name="gratitude"></p>
+<p><input type="submit" value="Save"></p>
 </form>
