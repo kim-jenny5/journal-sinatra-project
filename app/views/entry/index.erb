@@ -1,4 +1,8 @@
-<%= current_user.name %>'s Entries
+<h1><%= current_user.name %>'s Entries</h1>
 <% @entries.each do |entry| %>
-<%= entry %>
+    <% if !entry.title.blank? %>
+        <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a> - <%= entry.title %>
+    <% else %>
+        <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a>
+    <% end %>
 <% end %>

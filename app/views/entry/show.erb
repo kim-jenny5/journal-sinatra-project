@@ -1,0 +1,13 @@
+<h1><%= @entry.date %></h1>
+<% if !@entry.title.blank? %>
+    <h3><%= @entry.title %></h3>
+<% end %>
+<p><%= @entry.the_entry %></p>
+<h3><label id="show_mood">Mood: </label>
+<%= @entry.mood %></h3>
+<h3><label></label></h3>
+<p><%= @entry.food %></p>
+<h3><label>I was grateful for...</label></h3>
+<p><%= @entry.gratitude %></p>
+<br>
+<a href="/<%=current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a>

@@ -1,4 +1,5 @@
 require './config/environment'
+require 'date'
 
 class ApplicationController < Sinatra::Base
   set :public_folder, "public"
