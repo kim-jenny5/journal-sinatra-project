@@ -6,10 +6,12 @@ class UsersController < ApplicationController
 
     post '/signup' do
         # binding.pry
-        @user = User.create(params)
+        @user = User.create(params[:user])
+        binding.pry
 
         if @user.save
-            
+
+            redirect to "/#{@user.username}"
         else
             redirect to "/signup"
         end
