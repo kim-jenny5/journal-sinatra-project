@@ -1,5 +1,8 @@
+require 'rack-flash'
+
 class UsersController < ApplicationController
-    
+    use Rack::Flash
+
     get '/signup' do
         erb :'/user/signup'
     end
@@ -11,7 +14,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             # This should redirect to user's home/'index' page with URL as user's username
             # redirect to "/#{@user.username}"
-            redirect to "/"
+            redirect to "/user/home"
         else
             redirect to "/signup"
         end
@@ -24,11 +27,22 @@ class UsersController < ApplicationController
 
     post '/login' do
         @user = User.find_by_username(params[:username])
-        erb :'/user/login'
+        binding.pry
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
+            redirect to "/user/home"
+        else
+            flash[:error] = "Something went wrong. Please try again!"
+            redirect to "/login"
+        end
     end
 
     post '/logout' do
         session.clear
         redirect to "/"
+    end
+
+    get '/user/home' do
+        erb  :'/user/home'
     end
 end
