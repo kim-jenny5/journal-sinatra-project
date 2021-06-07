@@ -42,7 +42,18 @@ class UsersController < ApplicationController
         redirect to "/"
     end
 
-    get '/:user/home' do
+    get '/:username' do
+        if logged_in?
+            redirect to "/#{current_user.username}/home"
+        else
+            redirect to "/login"
+        end
+    end
+
+    get '/:username/home' do
         erb  :'/user/home'
     end
+
+
+
 end
