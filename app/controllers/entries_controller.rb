@@ -42,6 +42,15 @@ class EntriesController < ApplicationController
         else
             redirect to "/login"
         end
-        
+    end
+    
+
+    patch '/:username/entries/:id' do
+        if current_user.authenticate(params[:username])
+            @entry = Entry.find(params[:id])
+            erb :'/entry/edit'
+        else
+            redirect to "/login"
+        end
     end
 end

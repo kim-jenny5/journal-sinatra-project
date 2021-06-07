@@ -1,23 +1,26 @@
 <h1>Edit your entry here: </h1>
-<form action="/<%= current_user.username %>/entries" method="POST">
-<h3><label for="date">Today's Date</label></h3>
-<input type="date" id="date" name="date">
-<p><label for="title">Title (optional) </label></p>
-<p><input type="text" id="title" name="title"></p>
-<p><textarea id="the_entry" name="the_entry" rows="20" cols="60"></textarea></p>
-<h3><label for="mood">Today's Mood</label>
-<select id="mood" name="mood">
-    <option id="happy" name="happy">Happy</option>
-    <option id="meh" name="meh">Meh</option>
-    <option id="sad" name="sad">Sad</option>
-    <option id="angry" name="angry">Angry</option>
-    <option id="tired" name="tired">Tired</option>
-    <option id="stressed" name="stressed">Stressed</option>
-    <option id="sick" name="sick">Sick</option>
-</select></h3>
-<h2><label for="food">What did you eat today?</label></h2>
-<textarea id="food" name="food" rows="5" cols="40"></textarea>
-<h2><label for="gratitude">Today, I'm grateful for...</label></h2>
-<textarea id="gratitude" name="gratitude" rows="3" cols="40"></textarea>
-<p><input type="submit" value="Save"></p>
+<form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="PATCH">
+  <input type="hidden" id="hidden" name="_method" value="PATCH">
+  <h3><label for="date">Today's Date</label></h3>
+  <input type="date" id="date" name="entry[date]" value="<%= @entry.date %>">
+  <p><label for="title">Title (optional) </label></p>
+  <p><input type="text" id="title" name="entry[title]" value="<% @entry.title %>""></p>
+  <p>
+    <textarea id="the_entry" name="the_entry" rows="20" cols="60" value="<%= @entry.the_entry %>"></textarea>
+  </p>
+  <h3><label for="mood">Today's Mood</label>
+    <select id="mood" name="entry[mood]" value="<%= @entry.mood %>">
+      <option id="happy" name="happy">Happy</option>
+      <option id="meh" name="meh">Meh</option>
+      <option id="sad" name="sad">Sad</option>
+      <option id="angry" name="angry">Angry</option>
+      <option id="tired" name="tired">Tired</option>
+      <option id="stressed" name="stressed">Stressed</option>
+      <option id="sick" name="sick">Sick</option>
+    </select></h3>
+  <h2><label for="food">What did you eat today?</label></h2>
+  <textarea id="food" name="entry[food]" rows="5" cols="40"></textarea>
+  <h2><label for="gratitude">Today, I'm grateful for...</label></h2>
+  <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="40"></textarea>
+  <p><input type="submit" value="Save"></p>
 </form>
