@@ -1,3 +1,6 @@
 <h1>New Entry</h1>
-<form action="/">
+<form action="/<%= current_user.username %>/entries" method="POST">
+<label>Title: </label>
+<input type="text" id="title" name="title">
+<input type="submit" value="Save">
 </form>
