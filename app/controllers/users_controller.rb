@@ -17,6 +17,16 @@ class UsersController < ApplicationController
         end
     end
 
+    get '/login' do
+        # @user = User.find_by_username(params[:username])
+        erb :'/user/login'
+    end
+
+    post '/login' do
+        @user = User.find_by_username(params[:username])
+        erb :'/user/login'
+    end
+
     post '/logout' do
         session.clear
         redirect to "/"
