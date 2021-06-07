@@ -5,21 +5,14 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        # binding.pry
         @user = User.create(params[:user])
-        binding.pry
 
         if @user.save
-
+            session[:user_id] = @user.id
+            # This will redirect to user's home/'index' page with URL as user's username
             redirect to "/#{@user.username}"
         else
             redirect to "/signup"
         end
-
-        # if @user.name.blank? || @user.username.blank? || @user.password.blank?
-        #     redirect to "/signup"
-        # else
-        #     redirect to "/users/index"
-        # end
     end
 end
