@@ -1,7 +1,8 @@
-require 'rack-flash'
+# require 'sinatra/base'
+# require 'rack-flash'
 
 class UsersController < ApplicationController
-    use Rack::Flash
+    # use Rack::Flash
 
     get '/signup' do
         erb :'/user/signup'
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect to "/user/home"
         else
-            flash[:error] = "Something went wrong. Please try again!"
+            # flash[:error] = "The email and/or password you entered is incorrect. Please enter the correct information."
             redirect to "/login"
         end
     end
