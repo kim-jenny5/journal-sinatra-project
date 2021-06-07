@@ -5,17 +5,20 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        # @user = User.new(name: params[:name], username: params[:username], password: params[:username])
-
         @user = User.create(name: params[:name], username: params[:username], password: params[:username])
 
         if @user.save
             session[:user_id] = @user.id
-            # This will redirect to user's home/'index' page with URL as user's username
+            # This should redirect to user's home/'index' page with URL as user's username
             # redirect to "/#{@user.username}"
             redirect to "/"
         else
             redirect to "/signup"
         end
+    end
+
+    post '/logout' do
+        session.clear
+        redirect to "/"
     end
 end
