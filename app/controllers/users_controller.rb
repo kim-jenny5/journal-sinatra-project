@@ -44,16 +44,19 @@ class UsersController < ApplicationController
 
     get '/:username' do
         if logged_in?
-            redirect to "/#{current_user.username}/home"
+            erb  :'/user/home'
         else
             redirect to "/login"
         end
     end
 
-    get '/:username/home' do
-        erb  :'/user/home'
+    get '/:username/edit' do
+        if logged_in?
+            @user = User.find_by_username(params[:username])
+            erb :'/user/edit'
+        else
+            redirect to "/login"
+        end
     end
-
-
 
 end

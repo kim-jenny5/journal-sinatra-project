@@ -1,13 +1,12 @@
-<% if logged_in? %>
 <h1>Welcome <%= current_user.name %>!</h1>
-<% end %>
 
+<h2>How was your day today?</h2>
 <!-- <form action="/<%= current_user.username %>/entries">
     <input type="submit" value="Your entries">
 </form> -->
 
-<h2><a href="/<%= current_user.username %>/entries">Your Entries</a></h2>
-<h3><a href="/<%= current_user.username %>/entries">Edit Your Profile</a></h3>
+<h3><a href="/<%= current_user.username %>/entries">Your Entries</a></h3>
+<h3><a href="/<%= current_user.username %>/edit">Edit Your Profile</a></h3>
 
 <form action="/logout" method="POST">
 <input type="submit" value="Sign out">
