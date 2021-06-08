@@ -10,4 +10,11 @@
 <h3><label>I was grateful for...</label></h3>
 <p><%= @entry.gratitude %></p>
 <br>
+
+<form action="/<%= current_user.username %>/entries">
+    <input type="submit" value="Cancel">
+</form>
+
+
 <a href="/<%=current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a>
+<a href="/<%=current_user.username %>/entries">Go back to all entries</a>

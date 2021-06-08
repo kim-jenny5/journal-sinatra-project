@@ -1,5 +1,5 @@
 <h1>Edit your entry here: </h1>
-<form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="PATCH">
+<form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
   <input type="hidden" id="hidden" name="_method" value="PATCH">
   <h3><label for="date">Today's Date</label></h3>
   <input type="date" id="date" name="entry[date]" value="<%= @entry.date %>">
@@ -10,7 +10,6 @@
   </p>
   <h3><label for="mood">Today's Mood</label>
     <select id="mood" name="entry[mood]">
-      <option value="<%= @entry.mood %>">
         <option id="happy" value="happy">Happy</option>
         <option id="meh" value="meh">Meh</option>
         <option id="sad" value="sad">Sad</option>

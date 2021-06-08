@@ -23,3 +23,7 @@
   <textarea id="gratitude" name="gratitude" rows="3" cols="40"></textarea>
   <p><input type="submit" value="Save"></p>
 </form>
+
+<form action="/<%= current_user.username %>/entries">
+    <input type="submit" value="Cancel">
+</form>

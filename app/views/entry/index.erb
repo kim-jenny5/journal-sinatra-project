@@ -6,3 +6,8 @@
         <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a>
     <% end %>
 <% end %>
+
+<!-- <p><a href="/<%= current_user.username %>/entries/new">Create a new entry</a></p> -->
+<p><form action="/<%= current_user.username %>/entries/new">
+    <input type="submit" value="Create a new entry">
+</form></p>
