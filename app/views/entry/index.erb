@@ -1,13 +1,21 @@
 <h1><%= current_user.name %>'s Entries</h1>
+<form action="/<%= current_user.username %>/entries" method="POST">
 <% @entries.each.with_index(1) do |entry, index| %>
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
     <% if !entry.title.blank? %>
-        <p>(<%= index %>) <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a> - <%= entry.title %></p>
+        <label for="entry_<%= entry.id %>"></label>
+        <p><input type="checkbox" id="entry_<%= entry.id %>" value="<%= entry.id %>"> (<%= index %>) <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a> - <%= entry.title %></p>
     <% else %>
-        <p>(<%= index %>) <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a></p>
+        <p><input type="checkbox" value="<%= entry.id %>"> (<%= index %>) <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a></p>
     <% end %>
 <% end %>
+<input type="submit" value="Delete selected entry">
+</form>
 
 <!-- <p><a href="/<%= current_user.username %>/entries/new">Create a new entry</a></p> -->
-<p><form action="/<%= current_user.username %>/entries/new">
-    <input type="submit" value="Create a new entry">
-</form></p>
+<form action="/<%= current_user.username %>/entries/new">
+  <p><input type="submit" value="Create a new entry"></p>
+</form>
+<!-- <action="/<%= current_user.username %>/entries" method="POST">
+    <p><input type="hidden" id="hidden" name="_method" value="DELETE">Delete an entry</p>
+</action=> -->
