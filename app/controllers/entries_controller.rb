@@ -21,7 +21,7 @@ class EntriesController < ApplicationController
             @entry = Entry.create(date: params[:date], title: params[:title], the_entry: params[:the_entry], mood: params[:mood], food: params[:food], gratitude: params[:gratitude])
             @entry.user = current_user
             @entry.save
-            redirect to "/#{current_user.username}/entries"
+            redirect to "/#{current_user.username}/entries/#{@entry.id}"
         else
             redirect to "/login"
         end
@@ -51,9 +51,11 @@ class EntriesController < ApplicationController
             @entry.update(params[:entry])
             @entry.the_entry = params[:the_entry]
             @entry.save
-            erb :'/entry/show'
+            redirect to "/#{current_user.username}/entries/#{@entry.id}"
         else
             redirect to "/login"
         end
     end
+
+
 end

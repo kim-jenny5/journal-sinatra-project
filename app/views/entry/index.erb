@@ -1,9 +1,9 @@
 <h1><%= current_user.name %>'s Entries</h1>
-<% @entries.each do |entry| %>
+<% @entries.each.with_index(1) do |entry, index| %>
     <% if !entry.title.blank? %>
-        <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a> - <%= entry.title %>
+        <p>(<%= index %>) <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a> - <%= entry.title %></p>
     <% else %>
-        <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a>
+        <p>(<%= index %>) <a href="/<%= current_user.username %>/entries/<%= entry.id %>"<strong><%= entry.date %></strong></a></p>
     <% end %>
 <% end %>
 
