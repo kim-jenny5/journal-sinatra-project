@@ -2,7 +2,7 @@
 
 <p><a href="/<%= current_user.username %>/home">Home</a></p>
 
-<form action="/<%= current_user.username %>/entries" method="POST">
+<!-- <form action="/<%= current_user.username %>/entries" method="POST">
 <% @entries.each.with_index(1) do |entry, index| %>
     <input type="hidden" id="hidden" name="_method" value="DELETE">
     <% if !entry.title.blank? %>
@@ -13,7 +13,22 @@
     <% end %>
 <% end %>
 <input type="submit" value="Delete selected entry">
-</form>
+</form> -->
+
+<table>
+    <tr>
+        <th>No.</th>
+        <th>Date</th>
+        <th>Title</th>
+    </tr>
+    <% @entries.each.with_index(1) do |entry, index| %>
+        <tr>
+            <td><%= index %></td>
+            <td><%= entry.date %></td>
+            <td><%= entry.title %></td>
+        </tr>
+    <% end %>    
+</table>
 
 <!-- <p><a href="/<%= current_user.username %>/entries/new">Create a new entry</a></p> -->
 <form action="/<%= current_user.username %>/entries/new">
