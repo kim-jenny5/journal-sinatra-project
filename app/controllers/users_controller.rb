@@ -64,7 +64,6 @@ class UsersController < ApplicationController
         if logged_in?
             @user = User.find_by_username(params[:username])
             @user.name = params[:name]
-            @user.username = params[:username]
             @user.save
             redirect to "/#{current_user.username}"
         else
