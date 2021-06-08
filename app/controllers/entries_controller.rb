@@ -57,9 +57,11 @@ class EntriesController < ApplicationController
         end
     end
 
-    delete '/:username/entries' do
+    delete '/:username/entries/:id' do
         if current_user.authenticate(params[:username])
-            @entry = Entry.find()
+            @entry = Entry.find(params[:id])
+            @entry.destroy
+            redirect to "/#{current_user.username}/entries"
         else
             redirect to "/login"
         end

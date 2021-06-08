@@ -23,7 +23,7 @@
     </tr>
     <% @entries.each.with_index(1) do |entry, index| %>
         <tr>
-            <td><%= index %></td>
+            <td><a href="/<%= current_user.username %>/entries/<%= entry.id %>"><%= index %></a></td>
             <td><%= entry.date %></td>
             <td><%= entry.title %></td>
         </tr>

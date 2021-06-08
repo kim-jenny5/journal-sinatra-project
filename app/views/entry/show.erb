@@ -1,10 +1,11 @@
 <h1><%= @entry.date %></h1>
-<% if !@entry.title.blank? %>
+<!-- <% if !@entry.title.blank? %>
     <h3><%= @entry.title %></h3>
-<% end %>
+<% end %> -->
+<h3><%= @entry.title %></h3>
 <p><%= @entry.the_entry %></p>
 <h3><label id="show_mood">Mood: </label>
-<%= @entry.mood %></h3>z
+<%= @entry.mood %></h3>
 <h3><label id="show_food">What I ate today</label></h3>
 <p><%= @entry.food %></p>
 <h3><label id="show_gratitude">I was grateful for...</label></h3>
@@ -17,6 +18,11 @@
 
 <form action="/<%= current_user.username %>/entries">
     <p><input type="submit" value="Go back to all entries"></p>
+</form>
+
+<form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <p><input type="submit" value="Delete this entry"></p>
 </form>
 
 <!-- <a href="/<%=current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a> -->
