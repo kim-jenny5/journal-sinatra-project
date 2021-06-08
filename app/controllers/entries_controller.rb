@@ -38,17 +38,19 @@ class EntriesController < ApplicationController
     get '/:username/entries/:id/edit' do
         if current_user.authenticate(params[:username])
             @entry = Entry.find(params[:id])
+            # binding.pry
             erb :'/entry/edit'
         else
             redirect to "/login"
         end
     end
-    
 
     patch '/:username/entries/:id' do
         if current_user.authenticate(params[:username])
             @entry = Entry.find(params[:id])
-            erb :'/entry/edit'
+            binding.pry
+            @entry.update(date: params[:date], title: params[:title], the_entry: params[:the_entry], mood: params[:mood], gratitude: params[:gratitude])
+            erb :'/entry/show'
         else
             redirect to "/login"
         end
