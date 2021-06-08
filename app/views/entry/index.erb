@@ -1,4 +1,7 @@
 <h1><%= current_user.name %>'s Entries</h1>
+
+<p><a href="/<%= current_user.username %>/home">Home</a></p>
+
 <form action="/<%= current_user.username %>/entries" method="POST">
 <% @entries.each.with_index(1) do |entry, index| %>
     <input type="hidden" id="hidden" name="_method" value="DELETE">
