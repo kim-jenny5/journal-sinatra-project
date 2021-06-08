@@ -1,8 +1,9 @@
 <h1>Edit your profile</h1>
-
-<h2><label>Name: </label></h2>
-<input type="text" id="user_name" name="user_name" value="<%= @user.name %>">
-<h2><label>Username: </label></h2>
-<input type="text" id="user_name" name="user_name" value="<%= @user.username %>">
-
-<p><input type="submit" value="Update"></p>
+<form action="/<%= current_user.username %>/edit" method="POST">
+  <input type="hidden" id="hidden" name="_method" value="PATCH">
+  <h2><label for="name">Name: </label></h2>
+  <input type="text" id="name" name="name" value="<%= @user.name %>">
+  <h2><label for="username">Username: </label></h2>
+  <input type="text" id="username" name="username" value="<%= @user.username %>">
+  <p><input type="submit" value="Update"></p>
+</form>

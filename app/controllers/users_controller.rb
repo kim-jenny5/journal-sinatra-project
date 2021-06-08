@@ -59,4 +59,15 @@ class UsersController < ApplicationController
         end
     end
 
+    patch '/:username/edit' do 
+        if logged_in?
+            @user = User.find_by_username(params[:username])
+            @user.update(name: params[:name], name: params[:username])
+            redirect to "/#{current_user.username}/edit"
+            # binding.pry
+        else
+            redirect to "/login"
+        end 
+    end
+
 end
