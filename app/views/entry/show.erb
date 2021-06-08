@@ -11,10 +11,13 @@
 <p><%= @entry.gratitude %></p>
 <br>
 
-<form action="/<%= current_user.username %>/entries">
-    <input type="submit" value="Cancel">
+<form action="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">
+    <p><input type="submit" value="Edit"></p>
 </form>
 
+<form action="/<%= current_user.username %>/entries">
+    <p><input type="submit" value="Go back to all entries"></p>
+</form>
 
-<a href="/<%=current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a>
-<a href="/<%=current_user.username %>/entries">Go back to all entries</a>
+<!-- <a href="/<%=current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a> -->
+<!-- <a href="/<%=current_user.username %>/entries">Go back to all entries</a> -->

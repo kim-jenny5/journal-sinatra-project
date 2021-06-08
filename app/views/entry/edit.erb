@@ -24,4 +24,7 @@
     <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="40"><%= @entry.gratitude %></textarea>
     <p><input type="submit" value="Save"></p>
   </form>
-  <p><a href="/<%= current_user.username %>/entries">Go back to my entries.</a></p>
+  <!-- <p><a href="/<%= current_user.username %>/entries">Go back to my entries.</a></p> -->
+<form action="/<%= current_user.username %>/entries">
+    <input type="submit" value="Go back to all entries">
+</form>
