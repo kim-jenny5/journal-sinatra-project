@@ -2,13 +2,15 @@ class EntriesController < ApplicationController
     get '/:username/entries' do
 
         # binding.pry
-        # if logged_in?
-        if current_user.authenticate(params[:username])
-            @entries = Entry.all
+        if logged_in?
+        # if current_user.authenticate(params[:username])
+            # binding.pry
+            # @entries = Entry.all
+            @entries = Entry.all.select {|entry| entry.user_id == current_user.id }
             # binding.pry
             erb :'/entry/index'
-        elsif logged_in?
-            redirect to "/#{current_user.username}"
+        # elsif logged_in?
+        #     redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end

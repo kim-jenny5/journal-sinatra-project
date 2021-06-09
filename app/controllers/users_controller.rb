@@ -5,11 +5,17 @@ class UsersController < ApplicationController
     # use Rack::Flash
 
     get '/signup' do
-        erb :'/user/signup'
+        # if logged_in?
+        #     redirect to "/#{current_user.username}"
+        # else
+            erb :'/user/signup'
+        # end
     end
 
     post '/signup' do
-        @user = User.create(name: params[:name], username: params[:username], password: params[:password])
+        @user = User.new(params)
+        # binding.pry
+            # name: params[:name], username: params[:username], password: params[:password])
         if @user.save
             session[:user_id] = @user.id
             # This should redirect to user's home/'index' page with URL as user's username
@@ -22,7 +28,11 @@ class UsersController < ApplicationController
     end
 
     get '/login' do
-        erb :'/user/login'
+        # if logged_in?
+        #     redirect to "/#{current_user.username}"
+        # else
+            erb :'/user/login'
+        # end
     end
 
     post '/login' do
@@ -30,7 +40,7 @@ class UsersController < ApplicationController
         # binding.pry
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect to "/#{current_user.username}"
+            redirect to "/#{@user.username}"
         else
             # flash[:error] = "The email and/or password you entered is incorrect. Please enter the correct information."
             redirect to "/login"
@@ -43,10 +53,12 @@ class UsersController < ApplicationController
     end
 
     get '/:username' do
+        # binding.pry
+        # if current_user
         if logged_in?
             erb  :'/user/home'
-        else
-            redirect to "/login"
+        # else
+        #     redirect to "/login"
         end
     end
 end
