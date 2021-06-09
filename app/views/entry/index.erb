@@ -1,7 +1,5 @@
-<h1><%= current_user.name %>'s Entries</h1>
-
-<p><a href="/<%= current_user.username %>">Home</a></p>
-
+<h1><%= @user.name %>'s Entries</h1>
+<p><a href="/<%= @user.username %>">Home</a></p>
 <!-- <form action="/<%= current_user.username %>/entries" method="POST">
 <% @entries.each.with_index(1) do |entry, index| %>
     <input type="hidden" id="hidden" name="_method" value="DELETE">
@@ -14,28 +12,26 @@
 <% end %>
 <input type="submit" value="Delete selected entry">
 </form> -->
-
-<table>
-    <tr>
+<% if @entries.empty? %>
+  <p>No entries yet. Create your first entry today! </p>
+<% else %>
+  <% @entries.each.with_index(1) do |entry, index| %>
+    <table>
+      <tr>
         <th>No.</th>
         <th>Date</th>
         <th>Title</th>
-    </tr>
-    <% if @entries == nil %>
-        No entries yet!
-    <% else %>
-        <% @entries.each.with_index(1) do |entry, index| %>
-            <tr>
-                <td><a href="/<%= current_user.username %>/entries/<%= entry.id %>"><%= index %></a></td>
-                <td><%= entry.date %></td>
-                <td><%= entry.title %></td>
-            </tr>
-        <% end %>    
-    <% end %>    
+      </tr>
+      <tr>
+        <td><a href="/<%= current_user.username %>/entries/<%= entry.id %>"><%= index %></a></td>
+        <td><%= entry.date %></td>
+        <td><%= entry.title %></td>
+      </tr>
+    <% end %>
+  <% end %>
 </table>
-
 <!-- <p><a href="/<%= current_user.username %>/entries/new">Create a new entry</a></p> -->
-<form action="/<%= current_user.username %>/entries/new">
+<form action="/<%= @user.username %>/entries/new">
   <p><input type="submit" value="Create a new entry"></p>
 </form>
 <!-- <action="/<%= current_user.username %>/entries" method="POST">

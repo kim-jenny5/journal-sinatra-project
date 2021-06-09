@@ -55,10 +55,13 @@ class UsersController < ApplicationController
     get '/:username' do
         # binding.pry
         # if current_user
-        if logged_in?
+        @user = User.find_by_username(params[:username])
+        binding.pry
+        # if logged_in?
+        if current_user == @user
             erb  :'/user/home'
-        # else
-        #     redirect to "/login"
+        else
+            redirect to "/login"
         end
     end
 end
