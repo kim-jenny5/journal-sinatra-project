@@ -50,25 +50,4 @@ class UsersController < ApplicationController
             redirect to "/login"
         end
     end
-
-    get '/:username/edit' do
-        if logged_in?
-            @user = User.find_by_username(params[:username])
-            erb :'/user/edit'
-        else
-            redirect to "/login"
-        end
-    end
-
-    patch '/:username/edit' do 
-        if logged_in?
-            @user = User.find_by_username(params[:username])
-            @user.name = params[:name]
-            @user.save
-            redirect to "/#{current_user.username}"
-        else
-            redirect to "/login"
-        end 
-    end
-
 end
