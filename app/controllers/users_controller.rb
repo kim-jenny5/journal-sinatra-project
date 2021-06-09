@@ -56,7 +56,6 @@ class UsersController < ApplicationController
         # binding.pry
         # if current_user
         @user = User.find_by_username(params[:username])
-        binding.pry
         # if logged_in?
         if current_user == @user
             erb  :'/user/home'
