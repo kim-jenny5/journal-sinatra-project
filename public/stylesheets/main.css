@@ -46,10 +46,28 @@
     font-style: normal;
   }
 
-  /* --- Welcome Page Styles --- */
+  /* --- Page Styles --- */
   body {
-    background-color: #d7e3fc;
+    background-color: #edf2fb;
     font-family: "SourceSansPro";
+    text-align: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    min-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin: auto; 
+    text-align: left;
+    background-color: #e2eafc;
+  }
+
+  table thead tr {
+    background-color: #ccdbfd;
+  }
+
+  table th, table td {
+    padding: 12px 15px;
   }
 
   /* --- Footer Styles --- */
@@ -57,6 +75,7 @@
     position: fixed;
     left: 0;
     bottom: 0;
+    width: 100%;
     text-align: center;
   }
 }
