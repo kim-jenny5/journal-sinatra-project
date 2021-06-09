@@ -1,8 +1,14 @@
 class EntriesController < ApplicationController
     get '/:username/entries' do
+
+        # binding.pry
+        # if logged_in?
         if current_user.authenticate(params[:username])
             @entries = Entry.all
+            # binding.pry
             erb :'/entry/index'
+        elsif logged_in?
+            redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
@@ -11,6 +17,8 @@ class EntriesController < ApplicationController
     get '/:username/entries/new' do
         if current_user.authenticate(params[:username])
             erb :'/entry/new'
+        elsif logged_in?
+            redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
@@ -19,9 +27,10 @@ class EntriesController < ApplicationController
     post '/:username/entries' do
         if current_user.authenticate(params[:username])
             @entry = Entry.create(date: params[:date], title: params[:title], the_entry: params[:the_entry], mood: params[:mood], food: params[:food], gratitude: params[:gratitude])
-            @entry.user = current_user
             @entry.save
             redirect to "/#{current_user.username}/entries/#{@entry.id}"
+        elsif logged_in?
+            redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
@@ -31,6 +40,8 @@ class EntriesController < ApplicationController
         if current_user.authenticate(params[:username])
             @entry = Entry.find(params[:id])
             erb :'/entry/show'
+        elsif logged_in?
+            redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
@@ -40,6 +51,8 @@ class EntriesController < ApplicationController
         if current_user.authenticate(params[:username])
             @entry = Entry.find(params[:id])
             erb :'/entry/edit'
+        elsif logged_in?
+            redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
@@ -52,6 +65,8 @@ class EntriesController < ApplicationController
             @entry.the_entry = params[:the_entry]
             @entry.save
             redirect to "/#{current_user.username}/entries/#{@entry.id}"
+        elsif logged_in?
+            redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
@@ -62,6 +77,8 @@ class EntriesController < ApplicationController
             @entry = Entry.find(params[:id])
             @entry.destroy
             redirect to "/#{current_user.username}/entries"
+        elsif logged_in?
+            redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end

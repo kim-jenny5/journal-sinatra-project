@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
     post '/signup' do
         @user = User.create(name: params[:name], username: params[:username], password: params[:password])
-        current_user = @user
         if @user.save
             session[:user_id] = @user.id
             # This should redirect to user's home/'index' page with URL as user's username
