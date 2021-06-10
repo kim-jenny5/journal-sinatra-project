@@ -120,6 +120,40 @@
     font-size: 34px;
   }
 
+  #entry_home_button {
+    font-family: "SourceSansPro Bold";
+    position: fixed;
+    top: 22px;
+    right: 150px;
+    font-size: 24px;
+  }
+
+  .entry_box {
+    border: thin solid lightgray;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 800px;
+    margin: auto;
+    margin-top: 100px;
+  }
+
+  #entry_title {
+    font-size: 24px;
+    font-family: "SourceSansPro Light";
+    /* text-decoration-line: underline;
+    text-decoration-thickness: 3px; */
+  }
+
+  #entry_date {
+    font-size: 20px;
+    font-family: "SourceSansPro Light";
+  }
+
+  .entry_buttons {
+    display: inline-block;
+  }
+
   /* --- /user View Styles --- */
 
   #user_home_h1 {
@@ -151,15 +185,6 @@
     top: 20px;
     right: 25px;
   }
-
-  #entry_home_button {
-    font-family: "SourceSansPro Bold";
-    position: fixed;
-    top: 22px;
-    right: 150px;
-    font-size: 24px;
-  }
-
 
   /* --- Footer Styles --- */
   footer {

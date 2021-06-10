@@ -46,6 +46,7 @@ class EntriesController < ApplicationController
         # if current_user.authenticate(params[:username])
         if logged_in?
             @entry = Entry.find(params[:id])
+            @user = User.find_by_username(params[:username])
             erb :'/entry/show'
         # elsif logged_in?
         #     redirect to "/#{current_user.username}"
