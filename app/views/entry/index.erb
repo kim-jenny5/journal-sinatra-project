@@ -1,7 +1,14 @@
 <div id="entry_index_h1">
   <h1><%= @user.name %>'s Entries</h1>
 </div>
-<p><a href="/<%= @user.username %>">Home</a></p>
+<span id="entry_home_button">
+  <p><a href="/<%= @user.username %>">HOME</a></p>
+</span>
+<!-- <span id="entry_home_button">
+  <form action="/<%= @user.username %>" method="POST">
+    <input type="submit" value="Home">
+  </form>
+</span> -->
 <!-- <form action="/<%= current_user.username %>/entries" method="POST">
 <% @entries.each.with_index(1) do |entry, index| %>
     <input type="hidden" id="hidden" name="_method" value="DELETE">
@@ -28,9 +35,9 @@
     <% @entries.each.with_index(1) do |entry, index| %>
       <tbody>
         <tr>
-          <td><a href="/<%= current_user.username %>/entries/<%= entry.id %>"><%= index %></a></td>
-          <td><%= entry.date %></td>
-          <td><%= entry.title %></td>
+          <td><a href="/<%= current_user.username %>/entries/<%= entry.id %>"><strong><em><%= index %></em></strong></a></td>
+          <td><a href="/<%= current_user.username %>/entries/<%= entry.id %>"><%= entry.date %></a></td>
+          <td><a href="/<%= current_user.username %>/entries/<%= entry.id %>"><%= entry.title %></a></td>
         </tr>
       </tbody>
     <% end %>
@@ -38,8 +45,13 @@
 </table>
 <!-- <p><a href="/<%= current_user.username %>/entries/new">Create a new entry</a></p> -->
 <form action="/<%= @user.username %>/entries/new">
-  <p><input type="submit" value="Create a new entry"></p>
+  <p><input type="submit" value="New Entry"></p>
 </form>
 <!-- <action="/<%= current_user.username %>/entries" method="POST">
     <p><input type="hidden" id="hidden" name="_method" value="DELETE">Delete an entry</p>
 </action=> -->
+<span id="user_home_sign_out">
+  <form action="/logout" method="POST">
+    <input type="submit" value="LOG OUT">
+  </form>
+</span>
