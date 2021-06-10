@@ -131,7 +131,7 @@
   .entry_box {
     border: thin solid lightgray;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    padding: 50px;
+    padding: 50px 75px 50px 75px;
     width: 800px;
     margin: auto;
     margin-top: 100px;
@@ -141,6 +141,7 @@
     font-size: 24px;
     font-family: "SourceSansPro Light";
     padding-bottom: 5px;
+    text-align: left !important;
     /* text-decoration-line: underline;
     text-decoration-thickness: 3px; */
   }
@@ -149,10 +150,17 @@
     font-size: 20px;
     font-family: "SourceSansPro Light";
     padding-bottom: 10px;
+    text-align: left !important;
   }
 
   .entry_inputs {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    /* white-space: pre-wrap; */
+    text-align: left !important;
+  }
+
+  #show_mood {
+    font-size: 22px;
   }
 
   .entry_buttons {
