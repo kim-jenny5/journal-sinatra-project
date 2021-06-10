@@ -1,5 +1,5 @@
 @media screen {
-  /* --- Reset Styles --- */
+  /* --- Base Styles --- */
   * {
     list-style: none;
     margin: 0;
@@ -46,13 +46,20 @@
     font-style: normal;
   }
 
-  /* --- Base Page Styles --- */
   body {
     /* background-color: #F8EDEB; */
     font-family: "SourceSansPro";
     text-align: center;
   }
 
+    /* --- All Page Styles --- */
+    input[type=submit] {
+      display: block;
+      font-family: "SourceSansPro Light";
+      margin: auto;
+      width: 120px;
+    }
+  
   /* --- Table Styles --- */
 
   table {
@@ -84,19 +91,29 @@
     background-color: #EDF2FB;
   }
 
-  /* --- View Page Styles --- */
+  /* --- /entry View Styles --- */
   #entry_index_h1 {
     margin-top: 60px;
     font-family: "SourceSansPro Black";
   }
 
-  input[type=submit] {
-    display: block;
-    font-family: "SourceSansPro Light";
-    margin: auto;
-    width: 120px;
+  /* --- /user View Styles --- */
+  #user_home_h1 {
+    margin-top: 200px;
+    font-size: 48px;
+    background-image: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%);
   }
-  
+
+  mark {
+    /* background-color: #D7E3FC; */
+    background-image: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%);
+  }
+
+  #user_home_h2 {
+    font-size: 30px;
+    font-family: "SourceSansPro Italic";
+  }
+
   /* --- Footer Styles --- */
   footer {
     position: fixed;
