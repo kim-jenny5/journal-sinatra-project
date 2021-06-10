@@ -59,8 +59,14 @@
       margin: auto;
       width: 120px;
     }
-  
-  /* --- Table Styles --- */
+    
+    .home_page_name {
+      background: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%);
+      margin: auto;
+      width: auto;
+      height: 1500px;
+    }
+    /* --- Table Styles --- */
 
   table {
     border-collapse: collapse;
@@ -69,13 +75,13 @@
     margin: auto; 
     margin-top: 35px;
     margin-bottom: 20px;
-    text-align: left;
     /* background-color: #F6F9FD; */
-    border-bottom: 3px solid #C1D3FE;
+    border-bottom: 3px solid #E49097;
   }
 
   table thead tr {
-    background-color: #E2EAFC;
+    /* background: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%); */
+    background: linear-gradient(90deg, #9198e5, #e66465);
     font-family: "SourceSansPro Bold";
   }
   table th, table td {
@@ -87,8 +93,8 @@
   }
 
   table tbody tr:hover {
-    /* background-color: #FAFBFD; */
-    background-color: #EDF2FB;
+    /* background-color: #EDF2FB; */
+    background-color: #EAEBFA;
   }
 
   /* --- /entry View Styles --- */
@@ -101,12 +107,12 @@
   #user_home_h1 {
     margin-top: 200px;
     font-size: 48px;
-    background-image: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%);
+    /* background-image: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%); */
   }
 
   mark {
     /* background-color: #D7E3FC; */
-    background-image: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%);
+    background-image: linear-gradient(90deg, #9198e5, #e66465);
   }
 
   #user_home_h2 {
