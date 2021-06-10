@@ -12,31 +12,38 @@
   </form>
 </span>
 
-<h1>Edit</h1>
-<form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
-  <input type="hidden" id="hidden" name="_method" value="PATCH">
-  <h3><label for="date">Today's Date</label></h3>
-  <input type="date" id="date" name="entry[date]" value="<%= @entry.date %>">
-  <p><label for="title">Title (optional) </label></p>
-  <p><input type="text" id="title" name="entry[title]" value="<%= @entry.title %>"></p>
-  <p>
-    <textarea id="the_entry" name="the_entry" rows="20" cols="60"><%= @entry.the_entry %></textarea>
-  </p>
-  <h3><label for="mood">Today's Mood</label>
-    <select id="mood" name="entry[mood]">
-      <option id="empty"></option>
-      <option id="happy" value="happy">Happy</option>
-      <option id="meh" value="meh">Meh</option>
-      <option id="sad" value="sad">Sad</option>
-      <option id="angry" value="angry">Angry</option>
-      <option id="tired" value="tired">Tired</option>
-      <option id="stressed" value="stressed">Stressed</option>
-      <option id="sick" value="sick">Sick</option>
-    </select></h3>
-  <h2><label for="food">What did you eat today?</label></h2>
-  <textarea id="food" name="entry[food]" rows="5" cols="40"><%= @entry.food %></textarea>
-  <h2><label for="gratitude">Today, I'm grateful for...</label></h2>
-  <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="40"><%= @entry.gratitude %></textarea>
-  <p><input type="submit" value="Save"></p>
-</form>
+<div id="edit_title">
+  <h1>Edit Entry</h1>
+</div>
+
+<div id="edit_divider"></div>
+
+<div class="form">
+  <form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+    <div class="edit_entry_titles"><label for="date">Today's Date</label></div>
+    <input type="date" class="date_picker" name="entry[date]" value="<%= @entry.date %>">
+    <p><label for="title">Title (optional) </label></p>
+    <p><input type="text" id="title" name="entry[title]" value="<%= @entry.title %>"></p>
+    <p>
+      <textarea id="the_entry" name="the_entry" rows="20" cols="100"><%= @entry.the_entry %></textarea>
+    </p>
+    <h3><label for="mood">Today's Mood</label>
+      <select id="mood" name="entry[mood]">
+        <option id="empty"></option>
+        <option id="happy" value="happy">Happy</option>
+        <option id="meh" value="meh">Meh</option>
+        <option id="sad" value="sad">Sad</option>
+        <option id="angry" value="angry">Angry</option>
+        <option id="tired" value="tired">Tired</option>
+        <option id="stressed" value="stressed">Stressed</option>
+        <option id="sick" value="sick">Sick</option>
+      </select></h3>
+    <h2><label for="food">What did you eat today?</label></h2>
+    <textarea id="food" name="entry[food]" rows="5" cols="40"><%= @entry.food %></textarea>
+    <h2><label for="gratitude">Today, I'm grateful for...</label></h2>
+    <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="40"><%= @entry.gratitude %></textarea>
+    <p><input type="submit" value="Save"></p>
+  </form>
+</div>
 <!-- <p><a href="/<%= current_user.username %>/entries">Go back to my entries.</a></p> -->

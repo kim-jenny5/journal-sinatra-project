@@ -83,6 +83,8 @@
     textarea  {
       font-family: "SourceSansPro";
       font-size: 16px;
+      border: thin solid slategray;
+      border-radius: 5px;
     }
 
     /* --- Table Styles --- */
@@ -203,9 +205,44 @@
 
   /* --- /entry/EDIT View Styles --- */
 
-  #date {
+  .date_picker {
     font-family: "SourceSansPro";
     font-size: 14px;
+    border: thin solid slategray;
+    border-radius: 5px;
+  }
+
+  #edit_title {
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+
+  #edit_divider {
+    background: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%);
+    height: 5px;
+  }
+
+  /* .entry_titles {
+    padding-top: 10px;
+    font-size: 26px;
+  } */
+
+  .form {
+    border: thin solid lightgray;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+    /* padding: 0px 100px 0px 100px; */
+    width: 800px;
+    /* width: auto; */
+    margin: auto;
+  }
+
+  .edit_entry_titles {
+    padding-top: 35px;
+    /* padding-left: 50px; */    
+    text-align: left !important;
+    font-size: 20px;
+    font-family: "SourceSansPro Bold";
   }
 
   /* --- /user View Styles --- */
