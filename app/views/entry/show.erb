@@ -21,20 +21,12 @@
   <!-- <% if !@entry.title.blank? %>
     <h3><%= @entry.title %></h3>
 <% end %> -->
-  <div id="mood_entry">
-    Mood: <%= @entry.mood.capitalize %>
-  </div>
-  <div class="entry_inputs">
-    <p><%= @entry.the_entry %></p>
-  </div>
+  <div id="mood_entry">Mood: <%= @entry.mood.capitalize %></div>
+  <div class="entry_inputs"><%= @entry.the_entry %></div>
   <div class="entry_input_titles">What I Ate Today</div>
-  <div class="entry_inputs">
-    <p><%= @entry.food %></p>
-  </div>
+  <div class="entry_inputs"><%= @entry.food %></div>
   <div class="entry_input_titles">I was grateful for...</div>
-  <div class="entry_inputs">
-    <p><%= @entry.gratitude %></p>
-  </div>
+  <div class="entry_inputs"><%= @entry.gratitude %></div>
 </div>
 <br>
 <div class="entry_buttons">

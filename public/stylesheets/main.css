@@ -157,15 +157,18 @@
     text-align: left !important;
     font-size: 20px;
     font-family: "SourceSansPro Bold";
+    padding-bottom: 25px;
   }
 
   .entry_input_titles {
+    padding-top: 35px;
     text-align: left !important;
     font-size: 20px;
     font-family: "SourceSansPro Bold";
   }
 
   .entry_inputs {
+    padding-top: 10px;
     white-space: pre-wrap;
     text-align: left !important;
   }
