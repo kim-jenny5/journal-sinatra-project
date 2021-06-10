@@ -294,7 +294,7 @@
     padding-top: 20px;
   }
 
-  #user_home_entries {
+  .user_home_buttons {
     background: linear-gradient(90deg, #9198e5, #e66465);
     font-family: "SourceSansPro Bold";
     padding: 8px 15px;

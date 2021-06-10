@@ -6,8 +6,12 @@
   <h2>How was your day today?</h2>
 </div>
 <br>
-<span id="user_home_entries">
+<span class="user_home_buttons">
   <a href="/<%= @user.username %>/entries">Your Entries</a>
+</span>
+<div class="divider"></div>
+<span class="user_home_buttons">
+  <a href="/<%= @user.username %>/entries/new">Create a New Entry</a>
 </span>
 <span id="user_home_sign_out">
   <form action="/logout" method="POST">
