@@ -8,7 +8,12 @@ class ApplicationController < Sinatra::Base
   set :session_secret, "user_secret"
 
   get '/' do
-    erb :index
+    if logged_in? 
+      @user = current_user
+      redirect to "/#{@user.username}"
+    else
+      erb :index
+    end
   end
 
   helpers do
