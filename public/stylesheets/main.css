@@ -57,20 +57,20 @@
 
   table {
     border-collapse: collapse;
-    border-radius: 20px;
     min-width: 500px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin: auto; 
+    margin-top: 35px;
+    margin-bottom: 20px;
     text-align: left;
-    background-color: #EDF2FB;
-    border-bottom: 3px solid #B6CCFE;
+    /* background-color: #F6F9FD; */
+    border-bottom: 3px solid #C1D3FE;
   }
 
   table thead tr {
-    background-color: #D7E3FC;
+    background-color: #E2EAFC;
     font-family: "SourceSansPro Bold";
   }
-
   table th, table td {
     padding: 12px 15px;
   }
@@ -79,6 +79,24 @@
     border-bottom: thin solid lightgrey;
   }
 
+  table tbody tr:hover {
+    /* background-color: #FAFBFD; */
+    background-color: #EDF2FB;
+  }
+
+  /* --- View Page Styles --- */
+  #entry_index_h1 {
+    margin-top: 60px;
+    font-family: "SourceSansPro Black";
+  }
+
+  input[type=submit] {
+    display: block;
+    font-family: "SourceSansPro Light";
+    margin: auto;
+    width: 120px;
+  }
+  
   /* --- Footer Styles --- */
   footer {
     position: fixed;
