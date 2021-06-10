@@ -1,8 +1,8 @@
 # require 'sinatra/base'
-# require 'rack-flash'
+require 'rack-flash'
 
 class UsersController < ApplicationController
-    # use Rack::Flash
+    use Rack::Flash
 
     get '/signup' do
         # if logged_in?
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
             # redirect to "/#{@user.username}"
             redirect to "/#{current_user.username}"
         else
-            # flash message here that the username is taken
+            flash[:message] = "This username has already been taken."
             redirect to "/signup"
         end
     end
