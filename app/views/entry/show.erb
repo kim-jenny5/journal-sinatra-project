@@ -21,19 +21,18 @@
   <!-- <% if !@entry.title.blank? %>
     <h3><%= @entry.title %></h3>
 <% end %> -->
-  <div class="entry_inputs">
-    <label><p id="show_mood">Mood: </label>
-      <%= @entry.mood.capitalize %></p>
+  <div id="mood_entry">
+    Mood: <%= @entry.mood.capitalize %>
   </div>
   <div class="entry_inputs">
     <p><%= @entry.the_entry %></p>
   </div>
+  <div class="entry_input_titles">What I Ate Today</div>
   <div class="entry_inputs">
-    <h3><label id="show_food">What I Ate Today</label></h3>
     <p><%= @entry.food %></p>
   </div>
+  <div class="entry_input_titles">I was grateful for...</div>
   <div class="entry_inputs">
-    <h3><label id="show_gratitude">I was grateful for...</label></h3>
     <p><%= @entry.gratitude %></p>
   </div>
 </div>
@@ -52,5 +51,6 @@
     <p><input type="submit" value="Delete this entry"></p>
   </form> -->
 </div>
+<div class="space"></div>
 <!-- <a href="/<%=current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a> -->
 <!-- <a href="/<%=current_user.username %>/entries">Go back to all entries</a> -->

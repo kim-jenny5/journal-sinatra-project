@@ -153,14 +153,21 @@
     text-align: left !important;
   }
 
-  .entry_inputs {
-    padding-bottom: 15px;
-    /* white-space: pre-wrap; */
+  #mood_entry {
     text-align: left !important;
+    font-size: 20px;
+    font-family: "SourceSansPro Bold";
   }
 
-  #show_mood {
-    font-size: 22px;
+  .entry_input_titles {
+    text-align: left !important;
+    font-size: 20px;
+    font-family: "SourceSansPro Bold";
+  }
+
+  .entry_inputs {
+    white-space: pre-wrap;
+    text-align: left !important;
   }
 
   .entry_buttons {
@@ -182,6 +189,10 @@
     position: absolute;
     top: 20px;
     left: 25px;
+  }
+
+  .space {
+    padding-bottom: 75px;
   }
 
   /* --- /user View Styles --- */
@@ -218,9 +229,8 @@
 
   /* --- Footer Styles --- */
   footer {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    padding-top: 30px;
+    bottom: 0;
     text-align: center;
-  }
 }
