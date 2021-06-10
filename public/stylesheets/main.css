@@ -58,6 +58,9 @@
       font-family: "SourceSansPro Light";
       margin: auto;
       width: 120px;
+      border-radius: 10px;
+      border-width: thin;
+      cursor: pointer;
     }
     
     .home_page_name {
@@ -66,6 +69,12 @@
       width: auto;
       height: 1500px;
     }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     /* --- Table Styles --- */
 
   table {
@@ -104,21 +113,37 @@
   }
 
   /* --- /user View Styles --- */
+
   #user_home_h1 {
     margin-top: 200px;
     font-size: 48px;
     /* background-image: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%); */
   }
 
-  mark {
-    /* background-color: #D7E3FC; */
-    background-image: linear-gradient(90deg, #9198e5, #e66465);
-  }
-
   #user_home_h2 {
     font-size: 30px;
-    font-family: "SourceSansPro Italic";
+    font-family: "SourceSansPro Light";
+    margin-top: 20px;
   }
+
+  #user_home_entries {
+    background: linear-gradient(90deg, #9198e5, #e66465);
+    font-family: "SourceSansPro Bold";
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 26px;
+    position: relative;
+    top: 30px;
+    color: white;
+  }
+
+  #user_home_sign_out {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+  }
+
 
   /* --- Footer Styles --- */
   footer {

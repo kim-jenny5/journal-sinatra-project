@@ -1,15 +1,16 @@
-  
 <div id="user_home_h1">
-  <h1><mark>Welcome <%= @user.name %>!</mark></h1>
+  <!-- <h1><mark>Welcome <%= @user.name %>!</mark></h1> -->
+  <h1>Welcome <%= @user.name %>!</h1>
 </div>
 <div id="user_home_h2">
-    <h2>How was your day today?</h2>
+  <h2>How was your day today?</h2>
 </div>
-<!-- <form action="/<%= current_user.username %>/entries">
-    <input type="submit" value="Your entries">
-</form> -->
-
-<h3><a href="/<%= @user.username %>/entries">Your Entries</a></h3>
-<form action="/logout" method="POST">
-  <input type="submit" value="Sign out">
-</form>
+<br>
+<span id="user_home_entries">
+  <a href="/<%= @user.username %>/entries">Your Entries</a>
+</span>
+<span id="user_home_sign_out">
+  <form action="/logout" method="POST">
+    <input type="submit" value="Sign out">
+  </form>
+</span>
