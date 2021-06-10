@@ -58,6 +58,7 @@ class EntriesController < ApplicationController
     get '/:username/entries/:id/edit' do
         if logged_in?
                 @entry = Entry.find(params[:id])
+                @user = User.find_by_username(params[:username])
             erb :'/entry/edit'
         else
             redirect to "/login"

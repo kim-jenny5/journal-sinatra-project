@@ -80,6 +80,11 @@
       text-decoration: none;
     }
 
+    textarea  {
+      font-family: "SourceSansPro";
+      font-size: 16px;
+    }
+
     /* --- Table Styles --- */
 
   table {
@@ -90,16 +95,15 @@
     margin-top: 35px;
     margin-bottom: 20px;
     text-align: left;
-    /* background-color: #F6F9FD; */
     border-bottom: 3px solid #E49097;
   }
 
   table thead tr {
-    /* background: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%); */
     background: linear-gradient(90deg, #9198e5, #e66465);
     font-family: "SourceSansPro Bold";
     font-size: 22px;
   }
+
   table th, table td {
     padding: 12px 15px;
   }
@@ -109,7 +113,6 @@
   }
 
   table tbody tr:hover {
-    /* background-color: #EDF2FB; */
     background-color: #EAEBFA;
   }
 
@@ -195,7 +198,14 @@
   }
 
   .space {
-    padding-bottom: 75px;
+    padding-bottom: 50px;
+  }
+
+  /* --- /entry/EDIT View Styles --- */
+
+  #date {
+    font-family: "SourceSansPro";
+    font-size: 14px;
   }
 
   /* --- /user View Styles --- */
