@@ -85,6 +85,7 @@
       font-size: 16px;
       border: thin solid slategray;
       border-radius: 5px;
+      display: block;
     }
 
     /* --- Table Styles --- */
@@ -200,19 +201,20 @@
   }
 
   .space {
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
 
   /* --- /entry/EDIT View Styles --- */
 
   .date_picker {
     font-family: "SourceSansPro";
-    font-size: 14px;
+    font-size: 17px;
     border: thin solid slategray;
     border-radius: 5px;
+    display: block;
   }
 
-  #edit_title {
+  #edit_entry_title {
     font-size: 20px;
     padding-top: 15px;
     padding-bottom: 5px;
@@ -229,20 +231,53 @@
   } */
 
   .form {
-    border: thin solid lightgray;
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
-    /* padding: 0px 100px 0px 100px; */
+    /* border: thin solid lightgray; */
     width: 800px;
-    /* width: auto; */
     margin: auto;
   }
 
   .edit_entry_titles {
-    padding-top: 35px;
+    padding: 25px 0px 10px 0px;
     /* padding-left: 50px; */    
     text-align: left !important;
     font-size: 20px;
     font-family: "SourceSansPro Bold";
+  }
+
+  #edit_title {
+    padding: 35px 0px 0px 0px;
+    /* padding-left: 50px; */    
+    text-align: left !important;
+    font-size: 20px;
+    font-family: "SourceSansPro Bold";
+  }
+
+  #optional_title {
+    font-size: 14px;
+    text-align: left !important;
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  #title {
+    font-family: "SourceSansPro";
+    font-size: 17px;
+    border: thin solid slategray;
+    border-radius: 5px;
+    display: block;
+    width: 350px;
+  }
+
+  .mood_selector {
+    display: block;
+    font-size: 16px;
+    border: thin solid slategray;
+    border-radius: 5px;
+    width: 100px;
+  }
+
+  .save_entry_button {
+    padding: 25px 0px 30px 0px;
   }
 
   /* --- /user View Styles --- */
