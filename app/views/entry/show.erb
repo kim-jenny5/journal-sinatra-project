@@ -1,19 +1,16 @@
 <span id="entry_home_button">
   <p><a href="/<%= @user.username %>">HOME</a></p>
 </span>
-
 <span id="user_home_sign_out">
   <form action="/logout" method="POST">
     <input type="submit" value="LOG OUT">
   </form>
 </span>
-
 <span id="back_to_all_entries">
   <form action="/<%= current_user.username %>/entries">
     <p><input type="submit" value="&laquo; BACK"></p>
   </form>
 </span>
-
 <div class="entry_box">
   <div id="entry_title">
     <h1><%= @entry.title %></h1>
@@ -24,25 +21,36 @@
   <!-- <% if !@entry.title.blank? %>
     <h3><%= @entry.title %></h3>
 <% end %> -->
-  <p><%= @entry.the_entry %></p>
-  <h3><label id="show_mood">Mood: </label>
-    <%= @entry.mood %></h3>
-  <h3><label id="show_food">What I ate today</label></h3>
-  <p><%= @entry.food %></p>
-  <h3><label id="show_gratitude">I was grateful for...</label></h3>
-  <p><%= @entry.gratitude %></p>
+  <div class="entry_inputs">
+    <p><%= @entry.the_entry %></p>
+  </div>
+  <div class="entry_inputs">
+    <h3><label id="show_mood">Mood: </label>
+      <%= @entry.mood %></h3>
+  </div>
+  <div class="entry_inputs">
+    <h3><label id="show_food">What I ate today</label></h3>
+    <p><%= @entry.food %></p>
+  </div>
+  <div class="entry_inputs">
+    <h3><label id="show_gratitude">I was grateful for...</label></h3>
+    <p><%= @entry.gratitude %></p>
+  </div>
 </div>
 <br>
 <div class="entry_buttons">
-  <form action="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">
+  <a href="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a>
+  <!--  <form action="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">
     <p><input type="submit" value="Edit"></p>
-  </form>
+  </form> -->
 </div>
+<div class="divider"></div>
 <div class="entry_buttons">
-  <form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
+  <a href="/<%= current_user.username %>/entries/<%= @entry.id %>">Delete this entry</a>
+  <!-- <form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="DELETE">
     <p><input type="submit" value="Delete this entry"></p>
-  </form>
+  </form> -->
 </div>
 <!-- <a href="/<%=current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a> -->
 <!-- <a href="/<%=current_user.username %>/entries">Go back to all entries</a> -->
