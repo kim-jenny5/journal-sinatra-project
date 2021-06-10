@@ -8,6 +8,12 @@
   </form>
 </span>
 
+<span id="back_to_all_entries">
+  <form action="/<%= current_user.username %>/entries">
+    <p><input type="submit" value="&laquo; BACK"></p>
+  </form>
+</span>
+
 <div class="entry_box">
   <div id="entry_title">
     <h1><%= @entry.title %></h1>
@@ -30,11 +36,6 @@
 <div class="entry_buttons">
   <form action="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">
     <p><input type="submit" value="Edit"></p>
-  </form>
-</div>
-<div class="entry_buttons">
-  <form action="/<%= current_user.username %>/entries">
-    <p><input type="submit" value="All entries"></p>
   </form>
 </div>
 <div class="entry_buttons">
