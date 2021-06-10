@@ -46,28 +46,37 @@
     font-style: normal;
   }
 
-  /* --- Page Styles --- */
+  /* --- Base Page Styles --- */
   body {
-    background-color: #edf2fb;
+    /* background-color: #F8EDEB; */
     font-family: "SourceSansPro";
     text-align: center;
   }
 
+  /* --- Table Styles --- */
+
   table {
     border-collapse: collapse;
+    border-radius: 20px;
     min-width: 500px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin: auto; 
     text-align: left;
-    background-color: #e2eafc;
+    background-color: #EDF2FB;
+    border-bottom: 3px solid #B6CCFE;
   }
 
   table thead tr {
-    background-color: #ccdbfd;
+    background-color: #D7E3FC;
+    font-family: "SourceSansPro Bold";
   }
 
   table th, table td {
     padding: 12px 15px;
+  }
+
+  table tbody tr {
+    border-bottom: thin solid lightgrey;
   }
 
   /* --- Footer Styles --- */
