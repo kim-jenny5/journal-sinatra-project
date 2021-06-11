@@ -2,29 +2,18 @@ class EntriesController < ApplicationController
     get '/:username/entries' do
 
         @user = User.find_by_username(params[:username])
-        # binding.pry
-        # if logged_in?
         if current_user == @user
-        # if current_user.authenticate(params[:username])
-            # binding.pry
-            # @entries = Entry.all
             @entries = Entry.all.select {|entry| entry.user_id == current_user.id }
-            # binding.pry
             erb :'/entry/index'
-        # elsif logged_in?
-        #     redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
     end
 
     get '/:username/entries/new' do
-        # if current_user.authenticate(params[:username])
         if logged_in?
             @user = User.find_by_username(params[:username])
             erb :'/entry/new'
-        # elsif logged_in?
-        #     redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
@@ -36,21 +25,16 @@ class EntriesController < ApplicationController
             @entry.user_id = current_user.id
             @entry.save
             redirect to "/#{current_user.username}/entries/#{@entry.id}"
-        # elsif logged_in?
-        #     redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
     end
 
     get '/:username/entries/:id' do
-        # if current_user.authenticate(params[:username])
         if logged_in?
             @entry = Entry.find(params[:id])
             @user = User.find_by_username(params[:username])
             erb :'/entry/show'
-        # elsif logged_in?
-        #     redirect to "/#{current_user.username}"
         else
             redirect to "/login"
         end
@@ -67,28 +51,30 @@ class EntriesController < ApplicationController
     end
 
     patch '/:username/entries/:id' do
-        # if current_user.authenticate(params[:username])
         if logged_in?
             @entry = Entry.find(params[:id])
-            @entry.update(params[:entry])
-            @entry.the_entry = params[:the_entry]
-            @entry.save
-            redirect to "/#{current_user.username}/entries/#{@entry.id}"
-        # elsif logged_in?
-        #     redirect to "/#{current_user.username}"
+            if @entry.user == current_user
+                @entry.update(params[:entry])
+                @entry.the_entry = params[:the_entry]
+                @entry.save
+                redirect to "/#{current_user.username}/entries/#{@entry.id}"
+            else
+                redirect to "/"
+            end
         else
             redirect to "/login"
         end
     end
 
     delete '/:username/entries/:id' do
-        # if current_user.authenticate(params[:username])
         if logged_in?
             @entry = Entry.find_by_id(params[:id])
-            @entry.destroy
-            redirect to "/#{current_user.username}/entries"
-        # elsif logged_in?
-        #     redirect to "/#{current_user.username}"
+            if @entry.user == current_user
+                @entry.destroy
+                redirect to "/#{current_user.username}/entries"
+            else
+                redirect to "/"
+            end
         else
             redirect to "/login"
         end

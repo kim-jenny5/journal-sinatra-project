@@ -116,6 +116,42 @@
       outline: none;
     }
 
+    .flash {
+      background: lightgoldenrodyellow;
+      width: 275px;
+    }
+
+    .other_options {
+      padding-top: 10px;
+      font-size: 18px;
+    }
+
+    .other_options_link {
+      text-decoration-line: underline;
+    }
+
+    .signup_login_buttons {
+      padding-top: 40px;
+      width: 0;
+    }
+
+    .back_to_journal_home {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      display: block;
+      font-family: "SourceSansPro Bold";
+      font-size: 18px;
+      margin: auto;
+      min-width: min-content;
+      width: 150px;
+      border-radius: 15px;
+      cursor: pointer;
+      border-style: none;
+      background: linear-gradient(90deg, #9198e5, #e66465);
+      color: white;
+    }
+
     /* --- Table Styles --- */
 
   table {
@@ -344,7 +380,7 @@
 
   #login_box {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    padding: 100px 0px 100px 0px;
+    padding: 100px 0px 100px 50px;
     width: 500px;
     margin: auto;
     border-width: 10px;

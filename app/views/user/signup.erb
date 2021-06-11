@@ -1,6 +1,6 @@
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
+<span class="back_to_journal_home"><a href="/">&laquo; Back to Home</a></span>
+
+
 <div class="page_space"></div>
 <div id="signup_box">
   <div class="box_inside_box">
@@ -12,11 +12,18 @@
       <label for="username" class="login_signup_titles">Username</label>
       <p><input type="text" id="username" class="login_signup_inputs" name="username"></p>
       <span id="choose_username">Your username is permanent and cannot be changed later.</span>
+      <div class="flash">
+        <% if flash.has?(:message) %>
+          <%= flash[:message] %>
+        <% end %>
+      </div>
       <div class="break_space"></div>
       <label for="password" class="login_signup_titles">Password</label>
       <p><input type="password" id="password" class="login_signup_inputs" name="password"></p>
     </div>
-    <p><input type="submit" value="Create Account"></p>
+    <div class="signup_login_buttons">
+      <p><input type="submit" value="Create Account"></p>
+    </div>
   </form>
 </div>
-<p>Already have an account? <a href="/login">Log in now!</a></p>
+<div class="other_options">Already have an account? <span class="other_options_link"><a href="/login">Log in now!</a></span></div>
