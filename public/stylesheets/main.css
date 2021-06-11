@@ -214,7 +214,7 @@
     display: block;
   }
 
-  #edit_entry_title {
+  .edit_new_title {
     font-family: "SourceSansPro Black";
     font-size: 20px;
     padding-top: 15px;
@@ -237,7 +237,7 @@
     margin: auto;
   }
 
-  .edit_entry_titles {
+  .edit_new_entry_titles {
     padding: 25px 0px 10px 0px;
     /* padding-left: 50px; */    
     text-align: left !important;
@@ -281,6 +281,14 @@
     padding: 25px 0px 30px 0px;
   }
 
+  #save_new_entry_button {
+    padding: 25px 0px 0px 0px;
+  }
+
+  #cancel_button {
+    padding: 25px 0px 25px 0px;
+    position: relative;
+  }
   /* --- /user View Styles --- */
 
   #user_home_h1 {

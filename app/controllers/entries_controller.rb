@@ -21,6 +21,7 @@ class EntriesController < ApplicationController
     get '/:username/entries/new' do
         # if current_user.authenticate(params[:username])
         if logged_in?
+            @user = User.find_by_username(params[:username])
             erb :'/entry/new'
         # elsif logged_in?
         #     redirect to "/#{current_user.username}"

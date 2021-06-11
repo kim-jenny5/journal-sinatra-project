@@ -11,14 +11,14 @@
     <p><input type="submit" value="&laquo; BACK"></p>
   </form>
 </span>
-<div id="edit_entry_title">
+<div class="edit_new_title">
   <h1>Edit Entry</h1>
 </div>
 <div id="edit_divider"></div>
 <div class="form">
   <form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
-    <div class="edit_entry_titles"><label for="date">Today's Date</label></div>
+    <div class="edit_new_entry_titles"><label for="date">Date</label></div>
     <input type="date" class="date_picker" name="entry[date]" value="<%= @entry.date %>">
     <div id="edit_title"><label for="title">Title</label></div>
     <span id="optional_title"><em>Optional</em></span>
@@ -26,7 +26,7 @@
     <!-- <div id="edit_space"></div> -->
     <div class="space"></div>
     <textarea id="the_entry" name="the_entry" rows="15" cols="100"><%= @entry.the_entry %></textarea>
-    <div class="edit_entry_titles"><label for="mood">Today's Mood</label></div>
+    <div class="edit_new_entry_titles"><label for="mood">Mood</label></div>
       <select class="mood_selector" name="entry[mood]">
         <option id="empty"></option>
         <option id="happy" value="happy">Happy</option>
@@ -37,9 +37,9 @@
         <option id="stressed" value="stressed">Stressed</option>
         <option id="sick" value="sick">Sick</option>
       </select>
-  <div class="edit_entry_titles"><label for="food">What did you eat today?</label></div>
+  <div class="edit_new_entry_titles"><label for="food">What did you eat today?</label></div>
   <textarea id="food" name="entry[food]" rows="3" cols="80"><%= @entry.food %></textarea>
-  <div class="edit_entry_titles"><label for="gratitude">I'm grateful for...</label></div>
+  <div class="edit_new_entry_titles"><label for="gratitude">I'm grateful for...</label></div>
   <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="80"><%= @entry.gratitude %></textarea>
   <p class="save_entry_button"><input type="submit" value="Save"></p>
 </form>
