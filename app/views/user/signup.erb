@@ -3,18 +3,19 @@
 <% end %>
 <div class="page_space"></div>
 <div id="signup_box">
-  <h1 class="signup_login_h1">Sign Up</h1>
-  <form action="/signup" method="POST">
-    <label for="name" class="login_signup_titles">Name: </label>
-    <input type="text" id="name" name="name">
-    <div class="break_space"></div>
-    <label for="username">Username: </label>
-    <input type="text" id="username" name="username">
-    <div class="break_space"></div>
-    <label>Choose your username carefully! You won't be able to change it later. 😅</label>
-    <div class="break_space"></div>
-    <label for="password">Password: </label>
-    <input type="password" id="password" name="password">
+  <div class="box_inside_box">
+    <h1 class="signup_login_h1">Sign Up</h1>
+    <form action="/signup" method="POST">
+      <label for="name" class="login_signup_titles">Name</label>
+      <p><input type="text" id="name" class="login_signup_inputs" name="name"></p>
+      <div class="break_space"></div>
+      <label for="username" class="login_signup_titles">Username</label>
+      <p><input type="text" id="username" class="login_signup_inputs" name="username"></p>
+      <span id="choose_username">Your username is permanent and cannot be changed later.</span>
+      <div class="break_space"></div>
+      <label for="password" class="login_signup_titles">Password</label>
+      <p><input type="password" id="password" class="login_signup_inputs" name="password"></p>
+    </div>
     <p><input type="submit" value="Create Account"></p>
   </form>
 </div>

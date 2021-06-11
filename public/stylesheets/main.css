@@ -317,7 +317,7 @@
 
   #signup_box {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    padding: 100px 50px 100px 50px;
+    padding: 75px 50px 75px 50px;
     width: 500px;
     margin: auto;
     border-width: 10px;
@@ -335,18 +335,46 @@
     border-image: linear-gradient(90deg, #9198e5, #e66465) 10 stretch;
   }
 
-  .login_signup_titles {
-    padding-top: 10px;
-  }
-
   .signup_login_h1 {
     padding-bottom: 20px;
     font-family: "SourceSansPro Black";
+    font-size: 56px;
+  }
+
+  .login_signup_titles {
+    padding-top: 10px;
+    font-size: 24px;
   }
 
   .break_space {
     padding-bottom: 15px;
   }
+
+  .box_inside_box {
+    text-align: left;
+    display: block;
+  }
+
+  #choose_username {
+    font-size: smaller;
+  }
+
+  .login_signup_inputs {
+    height: 20px;
+    width: 200px;
+    border: thin solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: larger;
+    font-family: "SourceSansPro Light";
+    padding-top: 5px;
+  }
+
+  .login_signup_inputs:focus {
+    outline: none;
+  }
+
   /* --- /user View Styles --- */
 
   #user_home_h1 {
