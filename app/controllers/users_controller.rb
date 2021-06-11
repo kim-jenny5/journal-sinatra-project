@@ -5,11 +5,11 @@ class UsersController < ApplicationController
     use Rack::Flash
 
     get '/signup' do
-        # if logged_in?
-        #     redirect to "/#{current_user.username}"
-        # else
+        if logged_in?
+            redirect to "/#{current_user.username}"
+        else
             erb :'/user/signup'
-        # end
+        end
     end
 
     post '/signup' do
@@ -28,11 +28,11 @@ class UsersController < ApplicationController
     end
 
     get '/login' do
-        # if logged_in?
-        #     redirect to "/#{current_user.username}"
-        # else
+        if logged_in?
+            redirect to "/#{current_user.username}"
+        else
             erb :'/user/login'
-        # end
+        end
     end
 
     post '/login' do

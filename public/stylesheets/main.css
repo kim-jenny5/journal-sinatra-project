@@ -69,12 +69,36 @@
     }
     
     .home_page_name {
-      background: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%);
+      background: linear-gradient(90deg, #9198e5, #e66465);
       margin: auto;
       width: auto;
-      height: 1500px;
+      height: 1250px;
     }
-    
+
+    .home_page_name h1 {
+      font-family: "SourceSansPro Black";
+      font-size: 120px;
+      color: white;
+      padding: 275px 0px 40px 0px;
+    }
+
+    .home_page_name a {
+      display: inline-block;
+      font-family: "SourceSansPro Light";
+      border: thin solid white;
+      border-radius: 35px;
+      padding: 5px 10px 5px 10px;
+      font-size: 30px;
+      width: 150px;
+      color: white;
+    }
+
+    #main_route_divider {
+      width: 50px;
+      height: auto;
+      display: inline-block;
+    }
+      
     a {
       color: inherit;
       text-decoration: none;
