@@ -89,7 +89,7 @@
       border-radius: 35px;
       padding: 5px 10px 5px 10px;
       font-size: 30px;
-      width: 150px;
+      width: 140px;
       color: white;
     }
 
@@ -250,11 +250,6 @@
     height: 5px;
   }
 
-  /* .entry_titles {
-    padding-top: 10px;
-    font-size: 26px;
-  } */
-
   .form {
     /* border: thin solid lightgray; */
     width: 800px;
@@ -312,6 +307,45 @@
   #cancel_button {
     padding: 25px 0px 25px 0px;
     position: relative;
+  }
+
+  /* --- /signup & login View Styles --- */
+
+  .page_space {
+    padding-bottom: 150px;
+  }
+
+  #signup_box {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 100px 50px 100px 50px;
+    width: 500px;
+    margin: auto;
+    border-width: 10px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, #9198e5, #e66465) 10 stretch;
+  }
+
+  #login_box {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 100px 0px 100px 0px;
+    width: 500px;
+    margin: auto;
+    border-width: 10px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, #9198e5, #e66465) 10 stretch;
+  }
+
+  .login_signup_titles {
+    padding-top: 10px;
+  }
+
+  .signup_login_h1 {
+    padding-bottom: 20px;
+    font-family: "SourceSansPro Black";
+  }
+
+  .break_space {
+    padding-bottom: 15px;
   }
   /* --- /user View Styles --- */
 

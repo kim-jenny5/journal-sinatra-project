@@ -1,17 +1,21 @@
 <% if flash.has?(:message) %>
   <%= flash[:message] %>
 <% end %>
-
-<h1>Sign Up</h1>
-<form action="/signup" method="POST">
-<label for="name">Name: </label>
-<p><input type="text" id="name" name="name"></p>
-<label for="username">Username: </label>
-<p><input type="text" id="username" name="username"></p>
-<label>Choose your username carefully! You won't be able to change it later. 😉 </label>
-<p><label for="password">Password: </label></p>
-<p><input type="password" id="password" name="password"></p>
-<p><input type="submit" value="Create Account"></p>
-</form>
-
+<div class="page_space"></div>
+<div id="signup_box">
+  <h1 class="signup_login_h1">Sign Up</h1>
+  <form action="/signup" method="POST">
+    <label for="name" class="login_signup_titles">Name: </label>
+    <input type="text" id="name" name="name">
+    <div class="break_space"></div>
+    <label for="username">Username: </label>
+    <input type="text" id="username" name="username">
+    <div class="break_space"></div>
+    <label>Choose your username carefully! You won't be able to change it later. 😅</label>
+    <div class="break_space"></div>
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password">
+    <p><input type="submit" value="Create Account"></p>
+  </form>
+</div>
 <p>Already have an account? <a href="/login">Log in now!</a></p>

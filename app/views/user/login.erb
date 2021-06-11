@@ -1,10 +1,15 @@
-<h1>Log In</h1>
+<div class="page_space"></div>
+
+<div id="login_box">
+<h1 class="signup_login_h1">Log In</h1>
 <form action="/login" method="POST">
-<label>Username: </label>
-<p><input type="text" id="username" name="username"></p>
+<label for="username" class="login_signup_titles">Username: </label>
+<input type="text" id="username" name="username">
+<div class="break_space"></div>
 <label for="password">Password: </label>
-<p><input type="password" id="password" name="password"></p>
+<input type="password" id="password" name="password">
 <input type="submit" value="Login">
 </form>
+</div>
 
 <p>Don't have an account? <a href="/signup">Sign up here!</a></p>
