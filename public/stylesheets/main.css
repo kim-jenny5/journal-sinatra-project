@@ -116,15 +116,10 @@
       outline: none;
     }
 
-    #signup_flash {
-      background: lightgoldenrodyellow;
-      width: 350px;
-    }
-
-    .entry_flash {
+    #flash {
       background: lightgoldenrodyellow;
     }
-
+    
     .other_options {
       padding-top: 10px;
       font-size: 18px;

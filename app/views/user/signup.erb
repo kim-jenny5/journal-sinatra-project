@@ -10,8 +10,9 @@
       <label for="username" class="login_signup_titles">Username</label>
       <p><input type="text" id="username" class="login_signup_inputs" name="username"></p>
       <span id="choose_username">Your username is permanent and cannot be changed later.</span>
+      <br>
       <% if flash.has?(:message) %>
-        <div id="signup_flash"><%= flash[:message] %></div>
+        <span id="signup_flash"><%= flash[:message] %></span>
       <% end %>
       <div class="break_space"></div>
       <label for="password" class="login_signup_titles">Password</label>
