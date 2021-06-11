@@ -12,7 +12,7 @@
       <span id="choose_username">Your username is permanent and cannot be changed later.</span>
       <br>
       <% if flash.has?(:message) %>
-        <span id="signup_flash"><%= flash[:message] %></span>
+        <span class="flash"><%= flash[:message] %></span>
       <% end %>
       <div class="break_space"></div>
       <label for="password" class="login_signup_titles">Password</label>

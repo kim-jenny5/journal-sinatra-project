@@ -116,10 +116,10 @@
       outline: none;
     }
 
-    #flash {
+    .flash {
       background: lightgoldenrodyellow;
     }
-    
+
     .other_options {
       padding-top: 10px;
       font-size: 18px;

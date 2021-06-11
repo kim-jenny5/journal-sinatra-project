@@ -1,8 +1,4 @@
-# require 'rack-flash'
-
 class EntriesController < ApplicationController
-    # use Rack::Flash
-
     get '/:username/entries' do
         @user = User.find_by_username(params[:username])
         if current_user == @user
@@ -46,12 +42,12 @@ class EntriesController < ApplicationController
     get '/:username/entries/:id/edit' do
         if logged_in?
             @entry = Entry.find(params[:id])
+            @user = User.find_by_username(params[:username])
             if @entry.user == current_user
-                @user = User.find_by_username(params[:username])
                 erb :'/entry/edit'
             else
-                # flash[:message] = "You do not have access to this user's account."
-                redirect to "/#{current_user.username}"
+                flash[:no_access] = "You don't have access to this user's entries."
+                redirect to "/#{@user.username}"
             end
         else
             redirect to "/login"
