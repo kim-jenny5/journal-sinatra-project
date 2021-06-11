@@ -1,4 +1,3 @@
-# require 'sinatra/base'
 require 'rack-flash'
 
 class UsersController < ApplicationController

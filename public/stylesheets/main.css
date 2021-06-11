@@ -116,9 +116,13 @@
       outline: none;
     }
 
-    .flash {
+    #signup_flash {
       background: lightgoldenrodyellow;
-      width: 275px;
+      width: 350px;
+    }
+
+    .entry_flash {
+      background: lightgoldenrodyellow;
     }
 
     .other_options {
@@ -258,11 +262,22 @@
     display: inline-block;
   }
 
-  #back_to_all_entries {
+  .back_to_all_entries {
     position: absolute;
     top: 20px;
     left: 25px;
-  }
+    display: block;
+    font-family: "SourceSansPro Bold";
+    font-size: 18px;
+    margin: auto;
+    width: 190px;
+    height: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    border-style: none;
+    background: linear-gradient(90deg, #9198e5, #e66465);
+    color: white;
+}
 
   .space {
     padding-bottom: 40px;

@@ -6,12 +6,7 @@
     <input type="submit" value="LOG OUT">
   </form>
 </span>
-<span id="back_to_all_entries">
-  <form action="/<%= current_user.username %>/entries">
-    <p><input type="submit" value="&laquo; BACK"></p>
-  </form>
-</span>
-
+<div class="back_to_all_entries"><a href="/<%= current_user.username %>/entries">&laquo; Back to all entries</a></div>
 <div class="entry_box">
   <div id="entry_title">
     <h1><%= @entry.title %></h1>
@@ -19,9 +14,6 @@
   <div id="entry_date">
     <h2><%= @entry.date %></h2>
   </div>
-  <!-- <% if !@entry.title.blank? %>
-    <h3><%= @entry.title %></h3>
-<% end %> -->
   <div id="mood_entry">Mood: <%= @entry.mood.capitalize %></div>
   <div class="entry_inputs"><%= @entry.the_entry %></div>
   <div class="entry_input_titles">What I Ate Today</div>
@@ -32,18 +24,9 @@
 <br>
 <div class="entry_buttons">
   <a href="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a>
-  <!--  <form action="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">
-    <p><input type="submit" value="Edit"></p>
-  </form> -->
 </div>
 <div class="divider"></div>
 <div class="entry_buttons">
   <a href="/<%= current_user.username %>/entries/<%= @entry.id %>">Delete this entry</a>
-  <!-- <form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
-    <input type="hidden" id="hidden" name="_method" value="DELETE">
-    <p><input type="submit" value="Delete this entry"></p>
-  </form> -->
 </div>
 <div class="space"></div>
-<!-- <a href="/<%=current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a> -->
-<!-- <a href="/<%=current_user.username %>/entries">Go back to all entries</a> -->
