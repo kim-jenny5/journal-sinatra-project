@@ -18,9 +18,12 @@
 <div class="form">
   <form action="/<%= current_user.username %>/entries" method="POST">
     <div class="edit_new_entry_titles"><label for="date">Today's Date</label></div>
-    <input type="date" class="date_picker" name="date">
+    <input type="date" class="date_picker" id="date" name="date">
     <div id="edit_title"><label for="title">Title</label></div>
     <span id="optional_title"><em>Optional</em></span>
+    <input type="text" id="title" name="title">
+    <div class="break_space"></div>
+    <br>
     <p>
       <textarea id="the_entry" name="the_entry" rows="15" cols="100"></textarea>
     </p>
