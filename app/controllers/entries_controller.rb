@@ -12,7 +12,12 @@ class EntriesController < ApplicationController
     get '/:username/entries/new' do
         if logged_in?
             @user = User.find_by_username(params[:username])
-            erb :'/entry/new'
+            if current_user == @user
+                erb :'/entry/new'
+            else
+                flash[:no_access] = "You don't have access to this user's entries."
+                redirect to "/#{current_user.username}"
+            end
         else
             redirect to "/login"
         end
@@ -33,7 +38,12 @@ class EntriesController < ApplicationController
         if logged_in?
             @entry = Entry.find(params[:id])
             @user = User.find_by_username(params[:username])
-            erb :'/entry/show'
+            if @entry.user == current_user
+                erb :'/entry/show'
+            else
+                flash[:no_access] = "You don't have access to this user's entries."
+                redirect to "/#{current_user.username}"
+            end
         else
             redirect to "/login"
         end
@@ -47,7 +57,7 @@ class EntriesController < ApplicationController
                 erb :'/entry/edit'
             else
                 flash[:no_access] = "You don't have access to this user's entries."
-                redirect to "/#{@user.username}"
+                redirect to "/#{current_user.username}"
             end
         else
             redirect to "/login"

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     get '/signup' do
         if logged_in?
+            flash[:already_signed_in] = "You are already signed in!"
             redirect to "/#{current_user.username}"
         else
             erb :'/user/signup'
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
 
     get '/login' do
         if logged_in?
+            flash[:already_signed_in] = "You are already signed in!"
             redirect to "/#{current_user.username}"
         else
             erb :'/user/login'
@@ -46,7 +48,8 @@ class UsersController < ApplicationController
         if current_user == @user
             erb  :'/user/home'
         else
-            redirect to "/login"
-        end
+            flash[:signed_out] = "You've been logged out. Please log back in."
+            erb :'/user/login'
+        end    
     end
 end

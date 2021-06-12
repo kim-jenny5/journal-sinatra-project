@@ -1,10 +1,11 @@
 <div class="break_space"></div>
 <span class="flash">
-<% if flash.has?(:no_access) %>
-  <%= flash[:no_access] %>
-<% end %>
+  <% if flash.has?(:no_access) %>
+    <%= flash[:no_access] %>
+  <% elsif flash.has?(:already_signed_in) %>
+    <%= flash[:already_signed_in] %>
+  <% end %>
 </span>
-
 <div id="user_home_h1">
   <h1>Welcome <%= @user.name %>!</h1>
 </div>

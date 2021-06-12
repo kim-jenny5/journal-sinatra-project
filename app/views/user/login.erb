@@ -1,3 +1,10 @@
+<div class="break_space"></div>
+<span class="flash">
+  <% if flash.has?(:signed_out) %>
+    <%= flash[:signed_out] %>
+  <% end %>
+</span>
+
 <div class="page_space"></div>
 <div id="login_box">
   <div class="box_inside_box">
