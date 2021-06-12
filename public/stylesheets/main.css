@@ -168,13 +168,13 @@
     .main_page_button {
       position: absolute;
       top: 20px;
-      right: 160px;
+      right: 175px;
       display: block;
       font-family: "SourceSansPro Bold";
       font-size: 18px;
       margin: auto;
       width: 125px;
-      padding: 5px 0px 5px 0px;
+      padding: 6px 0px 6px 0px;
       border-radius: 15px;
       cursor: pointer;
       border-style: none;
@@ -521,14 +521,13 @@
   .logout_button {
     position: absolute;
     top: 20px;
-    right: 25px;
+    right: 40px;
     display: block;
     font-family: "SourceSansPro Bold";
     font-size: 18px;
     margin: auto;
     min-width: min-content;
     width: 110px;
-    padding: 5px 0px 5px 0px;
     border-radius: 15px;
     cursor: pointer;
     border-style: none;

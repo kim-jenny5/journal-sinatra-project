@@ -1,7 +1,11 @@
 <span class="main_page_button">
   <p><a href="/<%= @user.username %>">Main Page</a></p>
 </span>
-<span class="logout_button"><a href="/logout">Log Out</a></span>
+<span class="logout_button">
+<form action="/logout" method="POST">
+    <input type="submit" value="Log Out">
+</form>
+</span>
 <!-- <div class="back_to_all_entries"><a href="/<%= current_user.username %>/entries">&laquo; Back to all entries</a></div> -->
 <div class="back_button"><a href="/<%= current_user.username %>/entries">&laquo; Back to All Entries</a></div>
 <div class="entry_box">

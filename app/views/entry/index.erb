@@ -28,4 +28,8 @@
 </table>
 <div class="break_space"></div>
 <span id="new_entry_button"><a href="/<%= current_user.username %>/entries/new">New Entry</a></span>
-<span class="logout_button"><a href="/logout">Log Out</a></span>
+<span class="logout_button">
+<form action="/logout" method="POST">
+    <input type="submit" value="Log Out">
+</form>
+</span>

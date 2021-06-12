@@ -21,7 +21,11 @@
   <a href="/<%= @user.username %>/entries/new">Create a New Entry</a>
 </span>
 
-<span class="logout_button"><a href="/logout">Log Out</a></span>
+<span class="logout_button">
+<form action="/logout" method="POST">
+    <input type="submit" value="Log Out">
+</form>
+</span>
 
 <footer>
   <div>
