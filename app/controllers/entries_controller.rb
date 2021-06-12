@@ -5,6 +5,7 @@ class EntriesController < ApplicationController
             @entries = Entry.all.select {|entry| entry.user_id == current_user.id }
             erb :'/entry/index'
         else
+            flash[:signed_out] = "You've been logged out. Please log back in."
             redirect to "/login"
         end
     end
@@ -19,6 +20,7 @@ class EntriesController < ApplicationController
                 redirect to "/#{current_user.username}"
             end
         else
+            flash[:signed_out] = "You've been logged out. Please log back in."
             redirect to "/login"
         end
     end
@@ -45,6 +47,7 @@ class EntriesController < ApplicationController
                 redirect to "/#{current_user.username}"
             end
         else
+            flash[:signed_out] = "You've been logged out. Please log back in."
             redirect to "/login"
         end
     end
@@ -60,6 +63,7 @@ class EntriesController < ApplicationController
                 redirect to "/#{current_user.username}"
             end
         else
+            flash[:signed_out] = "You've been logged out. Please log back in."
             redirect to "/login"
         end
     end

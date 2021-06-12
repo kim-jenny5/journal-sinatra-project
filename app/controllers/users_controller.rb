@@ -49,7 +49,7 @@ class UsersController < ApplicationController
             erb  :'/user/home'
         else
             flash[:signed_out] = "You've been logged out. Please log back in."
-            erb :'/user/login'
+            redirect to "/login"
         end    
     end
 end
