@@ -97,5 +97,4 @@ class EntriesController < ApplicationController
             redirect to "/login"
         end
     end
-
 end

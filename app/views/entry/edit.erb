@@ -1,16 +1,8 @@
-<span id="entry_home_button">
-  <p><a href="/<%= @user.username %>">HOME</a></p>
+<span class="main_page_button">
+  <p><a href="/<%= @user.username %>">Main Page</a></p>
 </span>
-<span id="user_home_sign_out">
-  <form action="/logout" method="POST">
-    <input type="submit" value="LOG OUT">
-  </form>
-</span>
-<span id="back_to_all_entries">
-  <form action="/<%= current_user.username %>/entries">
-    <p><input type="submit" value="&laquo; BACK"></p>
-  </form>
-</span>
+<span class="logout_button"><a href="/logout">Log Out</a></span>
+<span class="back_button"><a href="/<%= current_user.username %>/entries">&laquo; Back to All Entries</a></span>
 <div class="edit_new_title">
   <h1>Edit Entry</h1>
 </div>

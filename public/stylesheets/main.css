@@ -142,14 +142,47 @@
       font-family: "SourceSansPro Bold";
       font-size: 18px;
       margin: auto;
-      min-width: min-content;
-      width: 150px;
+      width: 100px;
       border-radius: 15px;
       cursor: pointer;
       border-style: none;
       background: linear-gradient(90deg, #9198e5, #e66465);
       color: white;
     }
+
+    .back_button {
+      position: fixed;
+      top: 20px;
+      left: 25px;
+      display: block;
+      font-family: "SourceSansPro Bold";
+      font-size: 18px;
+      margin: auto;
+      width: 200px;
+      padding: 5px 0px 5px 0px;
+      border-radius: 15px;
+      cursor: pointer;
+      border-style: none;
+      background: linear-gradient(90deg, #9198e5, #e66465);
+      color: white;
+    }
+
+    .main_page_button {
+      position: fixed;
+      top: 20px;
+      right: 160px;
+      display: block;
+      font-family: "SourceSansPro Bold";
+      font-size: 18px;
+      margin: auto;
+      width: 125px;
+      padding: 5px 0px 5px 0px;
+      border-radius: 15px;
+      cursor: pointer;
+      border-style: none;
+      background: linear-gradient(90deg, #9198e5, #e66465);
+      color: white;
+    }  
 
     /* --- Table Styles --- */
 
@@ -187,14 +220,6 @@
     padding-top: 60px;
     font-family: "SourceSansPro Black";
     font-size: 34px;
-  }
-
-  #entry_home_button {
-    font-family: "SourceSansPro Bold";
-    position: absolute;
-    top: 22px;
-    right: 150px;
-    font-size: 24px;
   }
 
   .entry_box {
@@ -367,7 +392,7 @@
     padding: 25px 0px 0px 0px;
   }
 
-  #cancel_button {
+  .cancel_button {
     padding: 25px 0px 25px 0px;
     position: relative;
   }
@@ -464,10 +489,22 @@
     color: white;
   }
 
-  #user_home_sign_out {
-    position: absolute;
+  .logout_button {
+    position: fixed;
     top: 20px;
     right: 25px;
+    display: block;
+    font-family: "SourceSansPro Bold";
+    font-size: 18px;
+    margin: auto;
+    min-width: min-content;
+    width: 110px;
+    padding: 5px 0px 5px 0px;
+    border-radius: 15px;
+    cursor: pointer;
+    border-style: none;
+    background: linear-gradient(90deg, #9198e5, #e66465);
+    color: white;
   }
 
   /* --- Footer Styles --- */
