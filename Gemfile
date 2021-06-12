@@ -8,16 +8,18 @@ gem 'require_all'
 gem 'thin'
 gem 'bcrypt'
 gem 'rack-flash3'
+gem 'foreman'
 
 group :development do
   gem 'sqlite3', '~> 1.3.6'
+  gem 'dotenv'
   gem 'shotgun'
   gem 'pry'
   gem 'tux'
 end
 
 group :production do
-  gem 'pg'#, '~> 0.20'
+  gem 'pg', '~> 0.20'
 end
 
 group :test do

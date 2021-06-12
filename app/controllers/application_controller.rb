@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   set :public_folder, "public"
   set :views, "app/views"
   enable :sessions
-  set :session_secret, "user_secret"
+  set :session_secret, "user_secret", ENV.fetch('SESSION_SECRET')
 
   get '/' do
     if logged_in? 

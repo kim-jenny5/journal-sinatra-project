@@ -40,7 +40,9 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
     eventmachine (1.2.7)
+    foreman (0.87.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
@@ -50,7 +52,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.11.7-x86_64-darwin)
       racc (~> 1.4)
-    pg (1.2.3)
+    pg (0.21.0)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -123,7 +125,9 @@ DEPENDENCIES
   bcrypt
   capybara
   database_cleaner!
-  pg
+  dotenv
+  foreman
+  pg (~> 0.20)
   pry
   rack-flash3
   rack-test
