@@ -19,11 +19,13 @@
   <div class="entry_inputs"><%= @entry.gratitude %></div>
 </div>
 <br>
-<div class="entry_buttons">
+<span class="edit_buttons">
   <a href="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a>
-</div>
-<div id="show_divider"></div>
-<div class="entry_buttons">
-  <a href="/<%= current_user.username %>/entries/<%= @entry.id %>">Delete this entry</a>
-</div>
+</span>
+<!-- <div id="show_divider"></div> -->
+<div class="entry_divider"></div>
+  <form class="delete_button" action="/<%= @user.username %>/entries/<%= @entry.id%>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+  </form>
 <div class="space"></div>

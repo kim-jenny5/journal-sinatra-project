@@ -38,5 +38,8 @@
   <span class="save_button"><input type="submit" value="Save"></span>
 </form>
 <div class="entry_divider"></div>
-<span class="delete_button"><a href="/<%= current_user.username %>/entries">Delete this entry</a></span>
+<form class="delete_button" action="/<%= @user.username %>/entries/<%= @entry.id%>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+</form>
 <div class="space"></div>

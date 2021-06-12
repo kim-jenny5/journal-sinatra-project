@@ -47,7 +47,6 @@
   }
 
   body {
-    /* background-color: #F8EDEB; */
     font-family: "SourceSansPro";
     text-align: center;
   }
@@ -58,15 +57,15 @@
       font-family: "SourceSansPro Bold";
       font-size: 18px;
       margin: auto;
-      width: 110px;
-      height: 35px;
+      width: 100px;
+      padding: 6px 10px 6px 10px;
       border-radius: 15px;
       cursor: pointer;
       border-style: none;
       background: linear-gradient(90deg, #9198e5, #e66465);
       color: white;
     }
-    
+
     .home_page_name {
       background: linear-gradient(90deg, #9198e5, #e66465);
       margin: auto;
@@ -266,14 +265,19 @@
     text-align: left !important;
   }
 
-  .entry_buttons {
-    display: inline-block;
+  .edit_buttons {
+    display: inline;
     font-family: "SourceSansPro Bold";
-    border: thin solid black;
-    border-radius: 15px;
-    padding: 3px 10px 3px 10px;
     font-size: 18px;
-  }
+    margin: auto;
+    /* width: 125px; */
+    padding: 6px 30px 6px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    border-style: none;
+    background: linear-gradient(90deg, #9198e5, #e66465);
+    color: white;
+}
 
   #show_divider {
     width: 10px;
@@ -388,7 +392,7 @@
   }
 
   .delete_button {
-    padding: 6px 15px 6px 15px;
+    padding: 6px 10px 6px 10px;
     display: inline;
     bottom: 100px;
     font-family: "SourceSansPro Bold";
