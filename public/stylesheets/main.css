@@ -54,11 +54,10 @@
 
     /* --- All Page Styles --- */
     input[type=submit] {
-      display: block;
+      display: inline;
       font-family: "SourceSansPro Bold";
       font-size: 18px;
       margin: auto;
-      min-width: min-content;
       width: 110px;
       height: 35px;
       border-radius: 15px;
@@ -151,7 +150,7 @@
     }
 
     .back_button {
-      position: fixed;
+      position: absolute;
       top: 20px;
       left: 25px;
       display: block;
@@ -168,7 +167,7 @@
     }
 
     .main_page_button {
-      position: fixed;
+      position: absolute;
       top: 20px;
       right: 160px;
       display: block;
@@ -276,7 +275,7 @@
     font-size: 18px;
   }
 
-  .divider {
+  #show_divider {
     width: 10px;
     height: auto;
     display: inline-block;
@@ -329,7 +328,7 @@
     padding-bottom: 5px;
   }
 
-  #edit_divider {
+  .edit_new_divider {
     background: linear-gradient(90deg, rgba(193,211,254,1) 26%, rgba(190,176,248,1) 81%);
     height: 5px;
   }
@@ -384,18 +383,44 @@
     width: 100px;
   }
 
-  .save_entry_button {
+  .save_button {
     padding: 25px 0px 30px 0px;
   }
 
-  #save_new_entry_button {
-    padding: 25px 0px 0px 0px;
+  .delete_button {
+    padding: 6px 15px 6px 15px;
+    display: inline;
+    bottom: 100px;
+    font-family: "SourceSansPro Bold";
+    font-size: 18px;
+    margin: auto;
+    width: 110px;
+    border-radius: 15px;
+    cursor: pointer;
+    border-style: none;
+    background: linear-gradient(90deg, #9198e5, #e66465);
+    color: white;
   }
 
-  .cancel_button {
-    padding: 25px 0px 25px 0px;
-    position: relative;
+  .entry_divider {
+    width: 50px;
+    height: auto;
+    display: inline-block;
   }
+
+  #new_entry_button {
+    display: inline;
+    font-family: "SourceSansPro Bold";
+    font-size: 20px;
+    margin: auto;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    border-style: none;
+    background: linear-gradient(90deg, #9198e5, #e66465);
+    color: white;
+  }
+
 
   /* --- /signup & login View Styles --- */
 
@@ -490,7 +515,7 @@
   }
 
   .logout_button {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 25px;
     display: block;
@@ -506,6 +531,13 @@
     background: linear-gradient(90deg, #9198e5, #e66465);
     color: white;
   }
+
+  #main_page_buttons_divider {
+    width: 30px;
+    height: auto;
+    display: inline-block;
+  }
+
 
   /* --- Footer Styles --- */
   footer {

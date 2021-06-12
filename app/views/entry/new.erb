@@ -5,7 +5,7 @@
 <div class="edit_new_title">
   <h1>New Entry</h1>
 </div>
-<div id="edit_divider"></div>
+<div class="edit_new_divider"></div>
 <div class="form">
   <form action="/<%= current_user.username %>/entries" method="POST">
     <div class="edit_new_entry_titles"><label for="date">Today's Date</label></div>
@@ -34,13 +34,5 @@
   <div class="edit_new_entry_titles"><label for="gratitude">Today, I'm grateful for...</label></div>
   <textarea id="gratitude" name="gratitude" rows="3" cols="80"></textarea>
 </div>
-<div id="save_new_entry_button">
-<input type="submit" value="Save">
-</div>
+<div class="save_button"><input type="submit" value="Save"></div>
 </form>
-<!-- <div class="divider"></div> -->
-<!-- <form action="/<%= current_user.username %>/entries">
-  <input type="submit" value="Cancel">
-</form> -->
-<div class="cancel_button"><a href="/<%= current_user.username %>/entries">Cancel</a></div>
-<!-- <a href="/<%=current_user.username %>/entries">Cance;</a> -->

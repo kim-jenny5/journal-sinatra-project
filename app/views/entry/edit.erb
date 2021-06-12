@@ -6,7 +6,7 @@
 <div class="edit_new_title">
   <h1>Edit Entry</h1>
 </div>
-<div id="edit_divider"></div>
+<div class="edit_new_divider"></div>
 <div class="form">
   <form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
@@ -19,21 +19,24 @@
     <div class="space"></div>
     <textarea id="the_entry" name="the_entry" rows="15" cols="100"><%= @entry.the_entry %></textarea>
     <div class="edit_new_entry_titles"><label for="mood">Mood</label></div>
-      <select class="mood_selector" name="entry[mood]">
-        <option id="empty"></option>
-        <option id="happy" value="happy">Happy</option>
-        <option id="meh" value="meh">Meh</option>
-        <option id="sad" value="sad">Sad</option>
-        <option id="angry" value="angry">Angry</option>
-        <option id="tired" value="tired">Tired</option>
-        <option id="stressed" value="stressed">Stressed</option>
-        <option id="sick" value="sick">Sick</option>
-      </select>
-  <div class="edit_new_entry_titles"><label for="food">What did you eat today?</label></div>
-  <textarea id="food" name="entry[food]" rows="3" cols="80"><%= @entry.food %></textarea>
-  <div class="edit_new_entry_titles"><label for="gratitude">I'm grateful for...</label></div>
-  <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="80"><%= @entry.gratitude %></textarea>
-  <p class="save_entry_button"><input type="submit" value="Save"></p>
+    <select class="mood_selector" name="entry[mood]">
+      <option id="empty"></option>
+      <option id="happy" value="happy">Happy</option>
+      <option id="meh" value="meh">Meh</option>
+      <option id="sad" value="sad">Sad</option>
+      <option id="angry" value="angry">Angry</option>
+      <option id="tired" value="tired">Tired</option>
+      <option id="stressed" value="stressed">Stressed</option>
+      <option id="sick" value="sick">Sick</option>
+    </select>
+    <div class="edit_new_entry_titles"><label for="food">What did you eat today?</label></div>
+    <textarea id="food" name="entry[food]" rows="3" cols="80"><%= @entry.food %></textarea>
+    <div class="edit_new_entry_titles"><label for="gratitude">I'm grateful for...</label></div>
+    <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="80"><%= @entry.gratitude %></textarea>
+    <div class="space"></div>
+  </div>
+  <span class="save_button"><input type="submit" value="Save"></span>
 </form>
-</div>
-<!-- <p><a href="/<%= current_user.username %>/entries">Go back to my entries.</a></p> -->
+<div class="entry_divider"></div>
+<span class="delete_button"><a href="/<%= current_user.username %>/entries">Delete this entry</a></span>
+<div class="space"></div>

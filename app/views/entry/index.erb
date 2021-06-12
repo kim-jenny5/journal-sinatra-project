@@ -26,7 +26,6 @@
     <% end %>
   <% end %>
 </table>
-<form action="/<%= @user.username %>/entries/new">
-  <p><input type="submit" value="New Entry"></p>
-</form>
+<div class="break_space"></div>
+<span id="new_entry_button"><a href="/<%= current_user.username %>/entries/new">New Entry</a></span>
 <span class="logout_button"><a href="/logout">Log Out</a></span>
