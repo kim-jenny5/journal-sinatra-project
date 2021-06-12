@@ -70,7 +70,7 @@
       background: linear-gradient(90deg, #9198e5, #e66465);
       margin: auto;
       width: auto;
-      height: 1250px;
+      height: 1200px;
     }
 
     .home_page_name h1 {
@@ -83,10 +83,19 @@
     .home_page_name a {
       display: inline-block;
       font-family: "SourceSansPro Light";
-      border: thin solid white;
-      border-radius: 35px;
-      padding: 5px 10px 5px 10px;
-      font-size: 30px;
+      border: none;
+      padding: 0px 10px 5px 10px;
+      font-size: 36px;
+      width: 140px;
+      color: white;
+    }
+
+    .home_page_name h1 + a {
+      display: inline-block;
+      font-family: "SourceSansPro Bold";
+      border: none;
+      padding: 0px 10px 5px 10px;
+      font-size: 36px;
       width: 140px;
       color: white;
     }
