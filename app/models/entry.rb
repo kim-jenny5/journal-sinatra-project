@@ -1,5 +1,5 @@
 class Entry < ActiveRecord::Base
     belongs_to :user
 
-    # validates :title, :the_entry, :date, presence: true
+    validates :date, :the_entry, :mood, :food, :gratitude, presence: true
 end

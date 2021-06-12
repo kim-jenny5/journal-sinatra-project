@@ -46,6 +46,7 @@ class UsersController < ApplicationController
     get '/:username' do
         @user = User.find_by_username(params[:username])
         if current_user == @user
+            flash[:no_access] = "You don't have access to that user's account."
             erb  :'/user/home'
         else
             flash[:signed_out] = "You've been logged out. Please log back in."

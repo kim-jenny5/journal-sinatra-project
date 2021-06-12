@@ -5,23 +5,24 @@
   <p><a href="/<%= @user.username %>">Main Page</a></p>
 </span>
 <span class="logout_button">
-<form action="/logout" method="POST">
+  <form action="/logout" method="POST">
     <input type="submit" value="Log Out">
-</form>
+  </form>
 </span>
 <div class="edit_new_title">
   <h1>New Entry</h1>
 </div>
 <div class="edit_new_divider"></div>
 <div class="form">
-  <form action="/<%= current_user.username %>/entries" method="POST">
+    <div class="required"><mark>All fields (excluding title) are required.</mark></div>
+  <form action="/<%= current_user.username %>/entries" method="POST" autocomplete="on">
     <div class="edit_new_entry_titles"><label for="date">Today's Date</label></div>
     <input type="date" class="date_picker" id="date" name="date">
-    <div id="edit_title"><label for="title">Title</label></div>
-    <span id="optional_title"><em>Optional</em></span>
+    <div class="edit_title"><label for="title">Title</label></div>
+    <span class="subtitle"><em>Optional</em></span>
     <input type="text" id="title" name="title">
-    <div class="break_space"></div>
-    <br>
+    <div class="edit_title">Entry</div>
+    <!-- <span class="subtitle"><em>This field is required.</em></span> -->
     <p>
       <textarea id="the_entry" name="the_entry" rows="15" cols="100"></textarea>
     </p>

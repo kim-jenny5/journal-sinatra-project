@@ -6,7 +6,6 @@
     <input type="submit" value="Log Out">
 </form>
 </span>
-<!-- <div class="back_to_all_entries"><a href="/<%= current_user.username %>/entries">&laquo; Back to all entries</a></div> -->
 <div class="back_button"><a href="/<%= current_user.username %>/entries">&laquo; Back to All Entries</a></div>
 <div class="entry_box">
   <div id="entry_title">
@@ -26,7 +25,6 @@
 <span class="edit_buttons">
   <a href="/<%= current_user.username %>/entries/<%= @entry.id %>/edit">Edit</a>
 </span>
-<!-- <div id="show_divider"></div> -->
 <div class="entry_divider"></div>
   <form class="delete_button" action="/<%= @user.username %>/entries/<%= @entry.id%>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="DELETE">

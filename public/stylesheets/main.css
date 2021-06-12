@@ -352,15 +352,25 @@
     margin: auto;
   }
 
+  .required {
+    padding-top: 10px;
+    text-align: right !important;
+    font-size: 16px;
+    font-family: "SourceSansPro";
+  }
+
+  mark {
+    background-color: #FFFF99;
+  }
+
   .edit_new_entry_titles {
     padding: 25px 0px 10px 0px;
-    /* padding-left: 50px; */    
     text-align: left !important;
     font-size: 20px;
     font-family: "SourceSansPro Bold";
   }
 
-  #edit_title {
+  .edit_title {
     padding: 35px 0px 0px 0px;
     /* padding-left: 50px; */    
     text-align: left !important;
@@ -368,7 +378,7 @@
     font-family: "SourceSansPro Bold";
   }
 
-  #optional_title {
+  .subtitle {
     font-size: 14px;
     text-align: left !important;
     display: block;

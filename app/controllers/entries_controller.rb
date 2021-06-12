@@ -16,7 +16,7 @@ class EntriesController < ApplicationController
             if current_user == @user
                 erb :'/entry/new'
             else
-                flash[:no_access] = "You don't have access to this user's entries."
+                flash[:no_access] = "You don't have access to that user's entries."
                 redirect to "/#{current_user.username}"
             end
         else
@@ -27,10 +27,18 @@ class EntriesController < ApplicationController
 
     post '/:username/entries' do
         if logged_in?
-            @entry = Entry.create(date: params[:date], title: params[:title], the_entry: params[:the_entry], mood: params[:mood], food: params[:food], gratitude: params[:gratitude])
-            @entry.user_id = current_user.id
-            @entry.save
-            redirect to "/#{current_user.username}/entries/#{@entry.id}"
+            if params[:title].empty?
+                binding.pry
+                @entry = Entry.create(date: params[:date], the_entry: params[:the_entry], mood: params[:mood], food: params[:food], gratitude: params[:gratitude])
+                @entry.user_id = current_user.id
+                @entry.save
+                redirect to "/#{current_user.username}/entries/#{@entry.id}"
+            else
+                @entry = Entry.create(date: params[:date], the_entry: params[:the_entry], mood: params[:mood], food: params[:food], gratitude: params[:gratitude])
+                @entry.user_id = current_user.id
+                @entry.save
+                redirect to "/#{current_user.username}/entries/#{@entry.id}"
+            end
         else
             redirect to "/login"
         end
@@ -43,7 +51,7 @@ class EntriesController < ApplicationController
             if @entry.user == current_user
                 erb :'/entry/show'
             else
-                flash[:no_access] = "You don't have access to this user's entries."
+                flash[:no_access] = "You don't have access to that user's entries."
                 redirect to "/#{current_user.username}"
             end
         else
