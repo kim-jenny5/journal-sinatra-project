@@ -28,13 +28,12 @@ class EntriesController < ApplicationController
     post '/:username/entries' do
         if logged_in?
             if params[:title].empty?
-                binding.pry
                 @entry = Entry.create(date: params[:date], the_entry: params[:the_entry], mood: params[:mood], food: params[:food], gratitude: params[:gratitude])
                 @entry.user_id = current_user.id
                 @entry.save
                 redirect to "/#{current_user.username}/entries/#{@entry.id}"
             else
-                @entry = Entry.create(date: params[:date], the_entry: params[:the_entry], mood: params[:mood], food: params[:food], gratitude: params[:gratitude])
+                @entry = Entry.create(date: params[:date], title: params[:title], the_entry: params[:the_entry], mood: params[:mood], food: params[:food], gratitude: params[:gratitude])
                 @entry.user_id = current_user.id
                 @entry.save
                 redirect to "/#{current_user.username}/entries/#{@entry.id}"

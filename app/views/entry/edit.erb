@@ -2,9 +2,9 @@
   <p><a href="/<%= @user.username %>">Main Page</a></p>
 </span>
 <span class="logout_button">
-<form action="/logout" method="POST">
+  <form action="/logout" method="POST">
     <input type="submit" value="Log Out">
-</form>
+  </form>
 </span>
 <span class="back_button"><a href="/<%= current_user.username %>/entries">&laquo; Back to All Entries</a></span>
 <div class="edit_new_title">
@@ -15,15 +15,14 @@
   <form action="/<%= current_user.username %>/entries/<%= @entry.id %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
     <div class="edit_new_entry_titles"><label for="date">Date</label></div>
-    <input type="date" class="date_picker" name="entry[date]" value="<%= @entry.date %>">
-    <div id="edit_title"><label for="title">Title</label></div>
-    <span id="optional_title"><em>Optional</em></span>
-    <p><input type="text" id="title" name="entry[title]" value="<%= @entry.title %>"></p>
-    <!-- <div id="edit_space"></div> -->
-    <div class="space"></div>
-    <textarea id="the_entry" name="the_entry" rows="15" cols="100"><%= @entry.the_entry %></textarea>
+    <input type="date" class="date_picker" name="entry[date]" value="<%= @entry.date %>" required>
+    <div class="edit_title"><label for="title">Title</label></div>
+    <span class="subtitle"><em>Optional</em></span>
+    <p><input type="text" class="title" name="entry[title]" value="<%= @entry.title %>"></p>
+    <div class="edit_title">Entry</div>
+    <textarea id="the_entry" name="the_entry" rows="15" cols="100" required><%= @entry.the_entry %></textarea>
     <div class="edit_new_entry_titles"><label for="mood">Mood</label></div>
-    <select class="mood_selector" name="entry[mood]">
+    <select class="mood_selector" name="entry[mood]" required>
       <option id="empty"></option>
       <option id="happy" value="happy">Happy</option>
       <option id="meh" value="meh">Meh</option>
@@ -34,16 +33,16 @@
       <option id="sick" value="sick">Sick</option>
     </select>
     <div class="edit_new_entry_titles"><label for="food">What did you eat today?</label></div>
-    <textarea id="food" name="entry[food]" rows="3" cols="80"><%= @entry.food %></textarea>
+    <textarea id="food" name="entry[food]" rows="3" cols="80" required><%= @entry.food %></textarea>
     <div class="edit_new_entry_titles"><label for="gratitude">I'm grateful for...</label></div>
-    <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="80"><%= @entry.gratitude %></textarea>
+    <textarea id="gratitude" name="entry[gratitude]" rows="3" cols="80" required><%= @entry.gratitude %></textarea>
     <div class="space"></div>
   </div>
   <span class="save_button"><input type="submit" value="Save"></span>
 </form>
 <div class="entry_divider"></div>
 <form class="delete_button" action="/<%= @user.username %>/entries/<%= @entry.id%>" method="POST">
-    <input type="hidden" id="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
+  <input type="hidden" id="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
 </form>
 <div class="space"></div>

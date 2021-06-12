@@ -366,16 +366,15 @@
   .edit_new_entry_titles {
     padding: 25px 0px 10px 0px;
     text-align: left !important;
-    font-size: 20px;
+    font-size: 18px;
     font-family: "SourceSansPro Bold";
   }
 
   .edit_title {
     padding: 35px 0px 0px 0px;
-    /* padding-left: 50px; */    
     text-align: left !important;
-    font-size: 20px;
-    font-family: "SourceSansPro Bold";
+    font-size: 18px;
+    font-family: "SourceSansPro";
   }
 
   .subtitle {
@@ -385,13 +384,13 @@
     padding-bottom: 5px;
   }
 
-  #title {
+  .title {
     font-family: "SourceSansPro";
-    font-size: 17px;
+    font-size: 16px;
     border: thin solid slategray;
     border-radius: 5px;
     display: block;
-    width: 350px;
+    width: 400px;
   }
   
   #title:focus {
